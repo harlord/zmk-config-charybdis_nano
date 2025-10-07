@@ -69,9 +69,9 @@
 
         QWERT {
             bindings = <
-  &kp Q           &kp W           &kp E        &kp R             &kp T        &kp Y      &kp U              &kp I        &kp O            &kp P
-  &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G        &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_WIN SQT
-  &lt 5 Z         &kp X           &kp C        &kp V             &kp B        &kp N      &kp M              &kp COMMA    &kp DOT          &kp SLASH
+  &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &rgb_ug RGB_SAI   &rgb_ug RGB_SAD        &kp Y      &kp U              &kp I        &kp O            &kp P
+  &mt LEFT_WIN A   &mt LEFT_ALT S   &mt LCTRL D        &mt LEFT_SHIFT F  &kp G                  &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_WIN SQT
+  &lt 5 Z          &kp X            &kp C              &kp V             &kp B                  &kp N      &kp M              &kp COMMA    &kp DOT          &kp SLASH
                                   &mo 6        &lt 2 SPACE       &lt 1 TAB    &kp ENTER  &lt 4 BACKSPACE
             >;
         };
