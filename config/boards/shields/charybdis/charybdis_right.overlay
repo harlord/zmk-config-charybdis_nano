@@ -95,7 +95,7 @@
         chain-length = <17>; /* Right side LED count */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_MAPPING_GRB>;
+        color-mapping = <0x112>;
     };
 };
 
