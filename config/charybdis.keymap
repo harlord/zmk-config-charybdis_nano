@@ -52,6 +52,11 @@
             hold-trigger-key-positions = <34>;
             tapping-term-ms = <100>;
         };
+
+        rgb_ug: rgb_ug {
+            compatible = "zmk,behavior-rgb-ug";
+            #binding-cells = <1>;
+        };
     };
 
     macros {
