@@ -1,0 +1,2 @@
+osource "/Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano/zmk/app/boards/shields/*/Kconfig.shield"
+osource "/Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano/config/boards/shields/*/Kconfig.shield"

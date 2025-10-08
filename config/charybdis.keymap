@@ -1,3 +1,65 @@
+
+
+/*
+cd /Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano
+
+source ~/zephyrproject/.venv/bin/activate
+
+
+//To install local zmk
+# Tell west the config directory included in this repo
+west init -l config
+west update                # fetch Zephyr, ZMK, HALs
+west zephyr-export         # sets Zephyr CMake package files in venv
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -S zmk-usb-logging \
+  -S studio-rpc-usb-uart \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/left \
+  -S zmk-usb-logging \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_left
+
+#To check the numbers:
+
+   ls /dev/tty.usbmodem*   # data-terminal devices
+   ls /dev/cu.usbmodem*    # call-up devices (identical, no HW flow-ctrl)
+
+#and run to actuvate debug 
+   sudo tio /dev/tty.usbmodem1101
+   
+-------------------------------------------------
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/left \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_left
+
+*/
+
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -73,7 +135,7 @@
   &kp Q           &kp W           &kp E        &kp R             &kp T        &kp Y      &kp U              &kp I        &kp O            &kp P
   &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G        &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_WIN SQT
   &lt 5 Z         &kp X           &kp C        &kp V             &kp B        &kp N      &kp M              &kp COMMA    &kp DOT          &kp SLASH
-                                  &mo 6        &lt 2 SPACE       &lt 3 TAB    &kp ENTER  &lt 4 BACKSPACE
+                                  &mo 6        &lt 2 SPACE       &lt 3 TAB    &lt 3 ENTER  &lt 4 BACKSPACE
             >;
         };
 
