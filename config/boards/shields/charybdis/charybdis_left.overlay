@@ -46,7 +46,6 @@
         reg = <0>;
         status = "okay";
         spi-max-frequency = <4000000>;
-        led-count = <18>;
         num-pixels = <18>;
         zmk,chain-length = <18>;  /* alias for ZMK rgb_underglow */
         chain-length = <18>;  /* retained for compatibility */
