@@ -91,6 +91,7 @@
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         label = "WS2812";
+        status = "okay";
         spi-max-frequency = <4000000>;
         chain-length = <17>; /* Right side LED count */
         spi-one-frame = <0x70>;
