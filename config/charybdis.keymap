@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 //test
 &lt {
     tapping-term-ms = <240>;
@@ -53,10 +54,10 @@
             tapping-term-ms = <100>;
         };
 
-        rgb_ug: rgb_ug {
-            compatible = "zmk,behavior-rgb-ug";
+        rgb_ug: rgb_underglow {
+            compatible = "zmk,behavior-rgb-underglow";
+            label = "RGB Underglow";
             #binding-cells = <1>;
-            label = "RGB_UG";
         };
     };
 
@@ -104,8 +105,8 @@
             bindings = <
   &kp ESC  &kp F1  &kp F2  &kp F3  &kp F10    &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4
   &kp F12  &kp F4  &kp F5  &kp F6  &kp F11    &out OUT_TOG  &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &bt BT_CLR
-  &trans   &kp F7  &kp F8  &kp F9  &kp F12    &rgb_ug 0  &rgb_ug 1  &rgb_ug 2  &rgb_ug 3  &rgb_ug 4
-                   &trans  &trans  &trans     &trans        &rgb_ug 5  &rgb_ug 6  &rgb_ug 7  &rgb_ug 8
+  &trans   &kp F7  &kp F8  &kp F9  &kp F12    &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD
+                   &trans  &trans  &trans     &trans        &rgb_ug RGB_VAI  &rgb_ug RGB_VAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD
             >;
         };
 
