@@ -47,7 +47,7 @@
         label = "LED_STRIP";
         status = "okay";
         spi-max-frequency = <4000000>;
-        chain-length = <18>; /* Left side LED count */
+        chain_length = <18>; /* Left side LED count */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <0x112>;
