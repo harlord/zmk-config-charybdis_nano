@@ -44,11 +44,12 @@
     led_strip: led_strip@0 {
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
-        label = "LED_STRIP";
         status = "okay";
         spi-max-frequency = <4000000>;
         led-count = <18>;
-        chain-length = <18>;
+        num-pixels = <18>;
+        zmk,chain-length = <18>;  /* alias for ZMK rgb_underglow */
+        chain-length = <18>;  /* retained for compatibility */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <0x112>;
