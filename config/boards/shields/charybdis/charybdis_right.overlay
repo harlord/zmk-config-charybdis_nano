@@ -88,9 +88,8 @@
     pinctrl-names = "default", "sleep";
 
     ws2812: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-        reg = <0>;
-        label = "WS2812";
+        compatible = "spi-ledstrip";
+        label = "LED_STRIP";
         status = "okay";
         spi-max-frequency = <4000000>;
         chain-length = <17>; /* Right side LED count */
