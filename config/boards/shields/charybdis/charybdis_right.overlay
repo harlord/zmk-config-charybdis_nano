@@ -89,6 +89,7 @@
 
     ws2812: ws2812@0 {
         compatible = "spi-ledstrip";
+        reg = <0>;
         label = "LED_STRIP";
         status = "okay";
         spi-max-frequency = <4000000>;
