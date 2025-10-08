@@ -41,13 +41,13 @@
     pinctrl-1 = <&spi1_sleep>;
     pinctrl-names = "default", "sleep";
 
-    ws2812: ws2812@0 {
+    led_strip: led_strip@0 {
         compatible = "spi-ledstrip";
         reg = <0>;
         label = "LED_STRIP";
         status = "okay";
         spi-max-frequency = <4000000>;
-        led-count = <18>; /* Left side LED count */
+        chain-length = <18>; /* Left side LED count */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <0x112>;
@@ -56,6 +56,6 @@
 
 / {
     chosen {
-        zmk,underglow = &ws2812;
+        zmk,underglow = &led_strip;
     };
 };
