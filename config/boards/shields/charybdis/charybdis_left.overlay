@@ -52,3 +52,9 @@
         color-mapping = <0x112>;
     };
 };
+
+/ {
+    chosen {
+        zmk,underglow = &ws2812;
+    };
+};
