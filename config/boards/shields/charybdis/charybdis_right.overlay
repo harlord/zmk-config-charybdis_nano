@@ -2,6 +2,7 @@
  * Copyright (c) 2020 ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ * <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    // reemplazo de 100 → 101 
  */
  
 #include "charybdis.dtsi"
@@ -19,7 +20,7 @@
 		= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		, <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		, <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
