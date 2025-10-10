@@ -76,7 +76,7 @@
             flavor = "balanced";
             tapping-term-ms = <320>;                                 
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <180>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -88,7 +88,7 @@
             flavor = "balanced";
             tapping-term-ms = <220>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <180>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -283,14 +283,6 @@
             bindings = <&gpfind>, <&kp>;
         };
 
-        nav_esc: nav_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_ESC";
-            #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&mo 4>, <&none>, <&kp ESC>;
-        };
-
         bhmou: bhmou {
             compatible = "zmk,behavior-hold-tap";
             label = "BHMOU";
@@ -298,39 +290,8 @@
             #binding-cells = <2>; 
             flavor = "balanced";
             tapping-term-ms = <THUMB_HOLDING_TIME>;
+            require-prior-idle-ms = <180>;
             hold-trigger-key-positions = <MOUSE_HAND_KEYS>;
         };
-
-        bhtab: bhtab {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>; 
-            flavor = "balanced";
-            tapping-term-ms = <3000>;
-            hold-trigger-key-positions = <13>;
-            quick-tap-ms = <175>;
-        };
-
-        bhbks: bhbks {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>; 
-            flavor = "balanced";
-            tapping-term-ms = <3000>;
-            hold-trigger-key-positions = <12>;
-            quick-tap-ms = <175>;
-        };
-
-        bhdel: bhdel {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>; 
-            flavor = "balanced";
-            tapping-term-ms = <3000>;
-            hold-trigger-key-positions = <11>;
-            quick-tap-ms = <175>;
-        };
-
-
 
     };
