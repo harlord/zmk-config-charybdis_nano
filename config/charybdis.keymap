@@ -1,3 +1,80 @@
+/*
+cd /Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano
+
+source ~/zephyrproject/.venv/bin/activate
+
+
+//To install local zmk
+# Tell west the config directory included in this repo
+west init -l config
+west update                # fetch Zephyr, ZMK, HALs
+west zephyr-export         # sets Zephyr CMake package files in venv
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -S zmk-usb-logging \
+  -S studio-rpc-usb-uart \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/left \
+  -S zmk-usb-logging \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_left
+
+#To check the numbers:
+
+   ls /dev/tty.usbmodem*   # data-terminal devices
+   ls /dev/cu.usbmodem*    # call-up devices (identical, no HW flow-ctrl)
+
+#and run to actuvate debug 
+   sudo tio /dev/tty.usbmodem1101
+   
+-------------------------------------------------
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/left \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_left
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DSHIELD=charybdis_right
+
+
+
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/left \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DSHIELD=charybdis_left
+
+*/
+
+
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
