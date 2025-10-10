@@ -98,7 +98,6 @@ west build -p \
 //        32 33 34         35 36 37
 
 
-
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
@@ -118,6 +117,11 @@ west build -p \
 
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 #include "mouse.dtsi"
+
+/ {
+    chosen { zmk,matrix_transform = &five_column_transform; };
+};
+
 / {
 
     #include "macros/macros_general.dtsi"
