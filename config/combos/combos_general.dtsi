@@ -88,7 +88,7 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS 31>; \
     key-positions-leader = <KEYPOS>; \
-    key-positions-first-exclude = <34>; \
+    key-positions-first-exclude = <31>; \
     layers = <BASE DIRECTACC RAISE FUNC>; \
   };
 
@@ -98,7 +98,7 @@
     bindings = <&mshoff>, <BINDINGS>; \
     key-positions = <KEYPOS 31>; \
     key-positions-leader = <KEYPOS>; \
-    key-positions-first-exclude = <34>; \
+    key-positions-first-exclude = <31>; \
     slow-release; \
     layers = <BASE DIRECTACC RAISE FUNC>; \
   };
@@ -109,7 +109,7 @@
     bindings = <&mo DIRECTACC>, <BINDINGS>; \
     key-positions = <KEYPOS 31>; \
     key-positions-leader = <KEYPOS>; \
-    key-positions-first-exclude = <34>; \
+    key-positions-first-exclude = <31>; \
     slow-release; \
     layers = <BASE MOUSE MOUSETOP DIRECTACC RAISE FUNC>; \
   };
@@ -120,7 +120,7 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS 31>; \
     key-positions-leader = <KEYPOS>; \
-    key-positions-first-exclude = <34>; \
+    key-positions-first-exclude = <31>; \
     slow-release; \
     layers = <BASE MOUSE MOUSETOP DIRECTACC RAISE FUNC>; \
   };
@@ -130,7 +130,7 @@
     timeout-ms = <2000>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS 32>; \
-    key-positions-first-exclude = <35>; \
+    key-positions-first-exclude = <32>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
     layers = <BASE DIRECTACC RAISE FUNC>; \
@@ -141,7 +141,7 @@
     timeout-ms = <2000>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS 32>; \
-    key-positions-first-exclude = <35>; \
+    key-positions-first-exclude = <32>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
     layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
@@ -152,7 +152,7 @@
     timeout-ms = <2000>; \
     bindings = <&mo SYSTEM>, <BINDINGS>; \
     key-positions = <KEYPOS 33>; \
-    key-positions-first-exclude = <36>; \
+    key-positions-first-exclude = <33>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
     layers = <BASE DIRECTACC NUMBERS RAISE FUNC>; \
@@ -163,7 +163,7 @@
     timeout-ms = <2000>; \
     bindings = <&mo SYSTEM>, <BINDINGS>; \
     key-positions = <KEYPOS 33>; \
-    key-positions-first-exclude = <36>; \
+    key-positions-first-exclude = <33>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
     layers = <BASE DIRECTACC RAISE NUMBERS FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
@@ -175,7 +175,7 @@
     timeout-ms = <2000>; \
     bindings = <&mo NUMBERS>, <BINDINGS>; \
     key-positions = <KEYPOS 34>; \
-    key-positions-first-exclude = <37>; \
+    key-positions-first-exclude = <34>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
     require-prior-idle-ms = <1000>; \
@@ -186,7 +186,7 @@
     timeout-ms = <2000>; \
     bindings = <&mo NUMBERS>, <BINDINGS>; \
     key-positions = <KEYPOS 34>; \
-    key-positions-first-exclude = <37>; \
+    key-positions-first-exclude = <34>; \
     key-positions-leader = <KEYPOS>; \
     layers = <BASE DIRECTACC RAISE FUNC>; \
   };
