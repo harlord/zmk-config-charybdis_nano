@@ -1,0 +1,305 @@
+
+/*
+ mira los valores de key-positions para actualizarlos acorde a estas reglas, 
+ Si alguno de los valores es igual o mayor a 30, se restan 3
+*/
+
+
+
+        //     0  1  2  3  4             5  6  7  8  9
+        //    10 11 12 13 14            15 16 17 18 19
+        //    20 21 22 23 24            25 26 27 28 29 
+        //          30 31 32            33 34 
+
+        //     0  1  2  3  4             5  6  7  8  9
+        //    10 11 12 13 14            15 16 17 18 19
+        //    20 21 22 23 24            25 26 27 28 29 
+        //    30 31 32 33 34 35      36 37          38
+
+
+
+
+#define REQUIRE_PRIOR_IDLE_MS 120   
+
+#define LCOMBOACT(NAME, BINDINGS, KEYPOS) \
+  LCOMBOACT_##NAME { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    slow-release; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
+    layers = <BASE DIRECTACC NUMBERS RAISE LOWER FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+  };
+
+#define RCOMBO(NAME, BINDINGS, KEYPOS) \
+  rcombo_##NAME { \
+    timeout-ms = <500>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define RCOMBOMOUSE(NAME, BINDINGS, KEYPOS) \
+  rcombomouse_##NAME { \
+    timeout-ms = <800>; \
+    bindings = <BINDINGS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
+    key-positions = <KEYPOS>; \
+  };
+
+#define RCOMBOMOUSEACTION(NAME, BINDINGS, KEYPOS) \
+  rcombomouseoaction_##NAME { \
+    timeout-ms = <1000>; \
+    bindings = <&mo MOUSE>, <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    slow-release; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define LCOMBO(NAME, BINDINGS, KEYPOS) \
+  lcombo_##NAME { \
+    timeout-ms = <500>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
+    layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+  };
+
+#define COMBODIRECTACC(NAME, BINDINGS, KEYPOS) \
+  comboda_##NAME { \
+    timeout-ms = <500>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <SYSTEM>; \
+  };
+
+#define COMBOADJ(NAME, BINDINGS, KEYPOS) \
+  comboadj_##NAME { \
+    timeout-ms = <500>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <ADJ>; \
+  };
+
+#define CBKS(BINDINGS, KEYPOS) \
+  cbks_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 31>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <34>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define CBKSHIFT(BINDINGS, KEYPOS) \
+  cbkshift_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mshoff>, <BINDINGS>; \
+    key-positions = <KEYPOS 31>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <34>; \
+    slow-release; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define CBKDALEFT(BINDINGS, KEYPOS) \
+  cbkdaleft_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mo DIRECTACC>, <BINDINGS>; \
+    key-positions = <KEYPOS 31>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <34>; \
+    slow-release; \
+    layers = <BASE MOUSE MOUSETOP DIRECTACC RAISE FUNC>; \
+  };
+
+#define CBKLLEFT(BINDINGS, KEYPOS) \
+  cbklleft_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 31>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <34>; \
+    slow-release; \
+    layers = <BASE MOUSE MOUSETOP DIRECTACC RAISE FUNC>; \
+  };
+
+#define CTABD(BINDINGS, KEYPOS) \
+  ctabd_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 32>; \
+    key-positions-first-exclude = <35>; \
+    key-positions-leader = <KEYPOS>; \
+    slow-release; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define CTABDLEFT(BINDINGS, KEYPOS) \
+  ctabdleft_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 32>; \
+    key-positions-first-exclude = <35>; \
+    key-positions-leader = <KEYPOS>; \
+    slow-release; \
+    layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+  };
+
+#define CENT(BINDINGS, KEYPOS) \
+  cent_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mo SYSTEM>, <BINDINGS>; \
+    key-positions = <KEYPOS 33>; \
+    key-positions-first-exclude = <36>; \
+    key-positions-leader = <KEYPOS>; \
+    slow-release; \
+    layers = <BASE DIRECTACC NUMBERS RAISE FUNC>; \
+  };
+
+#define CENTDLEFT(BINDINGS, KEYPOS) \
+  centddleft_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mo SYSTEM>, <BINDINGS>; \
+    key-positions = <KEYPOS 33>; \
+    key-positions-first-exclude = <36>; \
+    key-positions-leader = <KEYPOS>; \
+    slow-release; \
+    layers = <BASE DIRECTACC RAISE NUMBERS FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+  };
+
+
+#define CSPC(BINDINGS, KEYPOS) \
+  cspc_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mo NUMBERS>, <BINDINGS>; \
+    key-positions = <KEYPOS 34>; \
+    key-positions-first-exclude = <37>; \
+    key-positions-leader = <KEYPOS>; \
+    slow-release; \
+    require-prior-idle-ms = <1000>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+#define CSPCS(BINDINGS, KEYPOS) \
+  cspcs_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <&mo NUMBERS>, <BINDINGS>; \
+    key-positions = <KEYPOS 34>; \
+    key-positions-first-exclude = <37>; \
+    key-positions-leader = <KEYPOS>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+    combos {
+        compatible = "zmk,combos";
+        //LEFT HAND
+
+        LCOMBOACT(comb_qwf, &kp ESC, 0 1 2)
+        LCOMBOACT(comb_wfp, &kp SPACE, 1 2 3)
+        LCOMBOACT(comb_pb, &kp ENTER, 3 4)
+        LCOMBOACT(comb_tg, &kp TAB, 13 14)
+        LCOMBOACT(comb_rst, &kp BACKSPACE, 11 12 13)
+        LCOMBOACT(comb_ars, &kp DELETE, 10 11 12)
+        LCOMBO(comb_gv, &kp MINUS, 14 24)// G V
+        LCOMBO(comb_td, &kp GRAVE, 13 23)// T D 
+        LCOMBO(comb_sc, &kp RBKT, 12 22)// S C
+        LCOMBO(comb_rx, &kp LBKT, 11 21)// R X
+        LCOMBO(comb_az, &kp BSLH, 10 20)// A Z
+        //RIGHT HAND
+
+        RCOMBOMOUSE(requal, &kp EQUAL, 15 25)
+        RCOMBO(rsemi, &kp SEMI, 16 26)
+        RCOMBO(SEMI, &kp COMMA, 17 27)
+        RCOMBO(COLON, &kp DOT, 18 28)
+        RCOMBO(FSLH, &kp FSLH, 19 29)
+
+        //NUMBERS
+
+        LCOMBO(NUM1, &kp N1, 0 10)
+        LCOMBO(NUM2, &kp N2, 1 11)
+        LCOMBO(NUM3, &kp N3, 2 12)
+        LCOMBO(NUM4, &kp N4, 3 13)
+        LCOMBO(NUM5, &kp N5, 4 14)
+        RCOMBO(NUM6, &kp N6, 5 15)
+        RCOMBO(NUM7, &kp N7, 6 16)
+        RCOMBO(NUM8, &kp N8, 7 17) 
+        RCOMBO(NUM9, &kp N9, 8 18)
+        RCOMBO(NUM0, &kp N0, 9 19)
+
+        // ADJUST
+
+        COMBODIRECTACC(adj_tog_on, &tog_on ADJ,  0  1  2  3 )
+        COMBOADJ(adj_tog_off, &tog_off ADJ,  0  1  2  3 )
+
+        RCOMBOMOUSEACTION(l_click, &mcmou LCLK, 16 17 18)
+        RCOMBOMOUSEACTION(r_click, &mcmou RCLK, 17 18 19)
+
+        combo_scroll_up: combo_scroll_up {
+            bindings = <&mo SNIPE>;   // or your desired behavior
+            key-positions = <17>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE>;          // where it applies
+        };
+
+        combo_snipe_up: combo_snipe_up {
+            bindings = <&mo SCROLLTOP>;   // or your desired behavior
+            key-positions = <18>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE>;          // where it applies
+        };
+
+        combo_mouse_l: combo_mouse_l {
+            bindings = <&mcmou LCLK>;   // or your desired behavior
+            key-positions = <16>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        };
+
+        combo_mouse_r: combo_mouse_r {
+            bindings = <&mcmou RCLK>;   // or your desired behavior
+            key-positions = <19>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        };
+
+        combo_mouse_l_sn: combo_mouse_l_sn {
+            bindings = <&mcsnp LCLK>;   // or your desired behavior
+            key-positions = <16 17>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        };
+
+        combo_mouse_r_sn: combo_mouse_r_sn {
+            bindings = <&mcsnp RCLK>;   // or your desired behavior
+            key-positions = <19 17>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        };
+
+
+//shift+BKSPACE<>TILDE 
+CBKSHIFT(&mshon LA(N1), 0)                CBKLLEFT(&mo DIRECTACC, 1)                    CBKLLEFT(&mo FUNC, 2)                        CBKLLEFT(&mo NUMBERS, 3)          CBKLLEFT(&mo SYSTEM, 4)                                                                 CBKS(&mc_bkctilde U, 7) 
+CBKS(&mc_bkctilde A, 10)                  CBKDALEFT(&td_find_g_ht LG(F) LG(LS(F)), 11)  CBKDALEFT(&lrlMo LA(LS(H)) LA(LS(F12)), 12)  CBKDALEFT(&kp LC(LS(MINUS)), 13)  CBKDALEFT(&kp LC(MINUS), 14)              CBKS(&caps_word, 15)  CBKS(&mc_ennesd N, 16)  CBKS(&mc_bkctilde E, 17)  CBKS(&mc_bkctilde I, 18)  CBKS(&mc_bkctilde O, 19)
+//commented to avoid ALT conflict
+
+//cmd+TAB<>DRAGTHUMB(inverted LOWER and DIRECTACC in low row only when DRAGTHUMB not activated)    
+CTABDLEFT(&kp LSHFT, 20)          CTABDLEFT(&kp LCTRL, 21)                CTABDLEFT(&kp LALT, 22)                   CTABDLEFT(&kp LGUI, 23)       CTABDLEFT(&kp CAPS, 24)                 CTABD(&kp CAPS, 25)  CTABD(&kp LGUI, 26)  CTABD(&kp LALT, 27)  CTABD(&kp LCTRL, 28)  CTABD(&kp LSHFT, 29)
+
+//ENT+RAISE
+CENTDLEFT(&kp LC(C_BRI_DN), 0)          CENTDLEFT(&kp LC(C_BRI_UP), 1)                CENTDLEFT(&kp C_BRI_DN, 2)                      CENTDLEFT(&kp C_BRI_UP, 3)                                                 CENTDLEFT(&kp C_VOL_UP, 5)    CENT(&kp C_PREV, 6)   CENT(&kp C_PP, 7)     CENT(&kp C_NEXT, 8)     
+                                        CENTDLEFT(&kp LC(UP), 11)                     CENTDLEFT(&kp LC(DOWN), 12)                     CENTDLEFT(&kp F11, 13)              CENTDLEFT(&kp LC(LS(LEFT)), 14)        CENTDLEFT(&kp C_VOL_DN, 15)   CENT(&bt_0, 16)       CENT(&bt_1, 17)       CENT(&bt_2, 18)          CENT(&bt_3, 19)
+                                                                                                                                                                                                                 CENTDLEFT(&kp C_MUTE, 25)
+    };

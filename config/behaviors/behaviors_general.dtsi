@@ -1,0 +1,336 @@
+
+#define THUMB_HOLDING_TIME 220 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds) a thumb key to activate a layer.  Shorter holds are treated as taps.
+#define THUMB_HOLDING_TIME_SHORT 150
+#define THUMB_REPEAT_DECAY_BASE 0 // "tap then hold" for key auto-repeat
+#define THUMB_REPEAT_DECAY 190 // "tap then hold" for key auto-repeat
+#define SPACE_HOLDING_TYPE "balanced"
+
+
+        //     0  1  2  3  4         5  6  7  8  9
+        //    10 11 12 13 14        15 16 17 18 19
+        //    20 21 22 23 24        25 26 27 28 29 
+        //    30 31 32 33 34 35  36 37          38
+
+        //     0  1  2  3  4     5  6  7  8  9
+        //    10 11 12 13 14    15 16 17 18 19
+        //20  21 22 23 24 25    26 27 28 29 30  31
+        //        32 33 34         35 36 37
+
+
+#define LEFT_HAND_KEYS    0  1  2  3  4  \
+                         10 11 12 13 14  \
+                         20 21 22 23 24  
+                           
+
+
+#define RIGHT_HAND_KEYS      5  6  7  8  9 \
+                            15 16 17 18 19 \
+                            25 26 27 28 29 
+                         
+
+#define FAST_THUMB_KEYS   30 31 32 33 34 35 36 38
+
+#define SLOW_THUMB_KEYS  37 
+
+
+#define MOUSE_HAND_KEYS  16 18 19
+
+
+
+#define LEFT_THUMB_KEYS   30 31 32 33 34 35    
+
+#define RIGHT_THUMB_KEYS   36 37 38
+
+#define INV_RIGHT_THUMB_KEYS  36           38 
+
+   
+   behaviors {
+
+        kt_on: key_toggle_on_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle On";
+            toggle-mode = "on";
+        };
+
+
+        kt_off: key_toggle_off_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle Off";
+            toggle-mode = "off";
+        };
+
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <2000>;
+        //quick-release;
+        ignore-modifiers;
+      };
+
+        hml_hr: hml_hr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <320>;                                 
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        hmr_hr: hmr_hr {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        lm_homerow_short: lm_homerow_short {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME_SHORT>;
+            #binding-cells = <2>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        lrlMo: lrlMo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LRLMO";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <175>;
+            hold-trigger-on-release;
+        };
+
+        lrrMo: lrrMo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LRRMO";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <175>;
+            hold-trigger-on-release;
+        };
+
+        bt_0: bt_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_select_disc_0>, <&out OUT_USB>, <&bt_pairing_c 0>;
+        };
+
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_select_disc_1>, <&out OUT_USB>, <&bt_pairing_c 1>;
+        };
+
+        bt_2: bt_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_select_disc_2>, <&out OUT_USB>, <&bt_pairing_c 2>;
+        };
+
+        bt_3: bt_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_select_disc_3>, <&out OUT_USB>, <&bt_pairing_c 3>;
+        };
+
+        bt_4: bt_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_select_disc_4>, <&out OUT_USB>, <&bt_pairing_c 4>;
+        };
+
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
+
+        tdSelectCoppingLR: tdSelectCoppingLR {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&scl_l_to_r>, <&scw_l_to_r>;
+        };
+
+        base_th_mo_kp_hp: base_th_mo_kp_hp {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            //quick-tap-ms = <THUMB_REPEAT_DECAY_BASE>; // enable repeat
+            hold-trigger-on-release; // wait for other home row mods
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        th_mo_kp_hp: th_mo_kp_hp {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            hold-trigger-on-release; // wait for other home row mods
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        th_kp_kp_hp: th_kp_kp_hp {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            #binding-cells = <2>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        space: space {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = SPACE_HOLDING_TYPE;
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            //quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            #binding-cells = <2>;
+            require-prior-idle-ms = <80>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        spacelm: thumb_layer_access_spacebarlm {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = SPACE_HOLDING_TYPE;
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            #binding-cells = <2>;
+            require-prior-idle-ms = <80>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        th_kp_sl_hp: th_kp_sl_hp {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
+            bindings = <&kp>, <&sl>;
+        };
+
+        lm_homerow: lm_homerow {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            #binding-cells = <2>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        tdSelectCoppingRL: tdSelectCoppingRL {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&scl_r_to_l>, <&scw_r_to_l>;
+        };
+
+        td_find_s_ht: td_find_s_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&pfind>, <&kp>;
+        };
+
+        td_find_g_ht: td_find_g_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&gpfind>, <&kp>;
+        };
+
+        nav_esc: nav_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAV_ESC";
+            #binding-cells = <0>;
+            tapping-term-ms = <500>;
+            bindings = <&mo 4>, <&none>, <&kp ESC>;
+        };
+
+        bhmou: bhmou {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BHMOU";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            hold-trigger-key-positions = <MOUSE_HAND_KEYS>;
+        };
+
+        bhtab: bhtab {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <3000>;
+            hold-trigger-key-positions = <13>;
+            quick-tap-ms = <175>;
+        };
+
+        bhbks: bhbks {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <3000>;
+            hold-trigger-key-positions = <12>;
+            quick-tap-ms = <175>;
+        };
+
+        bhdel: bhdel {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <3000>;
+            hold-trigger-key-positions = <11>;
+            quick-tap-ms = <175>;
+        };
+
+
+
+    };
