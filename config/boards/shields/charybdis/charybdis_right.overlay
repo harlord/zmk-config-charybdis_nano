@@ -5,6 +5,7 @@
  */
  
 #include "charybdis.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
 	col-offset = <6>;
@@ -58,9 +59,30 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <5>;
-	snipe-layers = <6>;
+        automouse-layer = <MOUSE>;
+        scroll-layers = <SCROLL SCROLLTOP FAST>;
+        snipe-layers = <SNIPE>;
     };
+};
+
+/ {
+  fast_scroll_scaler: fast_scroll_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+    track-remainders;
+  };
+};
+
+/ {
+  xy_boost_scaler: xy_boost_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_X INPUT_REL_Y>;
+    track-remainders;
+  };
 };
 
 / {
@@ -68,5 +90,24 @@
     compatible = "zmk,input-listener";
     device = <&trackball>;
 
+    fast {
+        layers = <FAST>;
+        input-processors = <&fast_scroll_scaler 8 1>;
+    };
+
+    boost {
+        layers = <MOUSE>;
+        input-processors = <&xy_boost_scaler 2 1>;
+    };
+
+    boost_top {
+        layers = <MOUSETOP>;
+        input-processors = <&xy_boost_scaler 2 1>;
+    };
+
+    snipe_boost {
+        layers = <SNIPE>;
+        input-processors = <&xy_boost_scaler 2 1>;
+    };
   };
 };
