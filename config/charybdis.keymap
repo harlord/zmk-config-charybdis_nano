@@ -133,80 +133,80 @@ west build -p \
  base_layer {
             label = "BASE";
             bindings = <
-                               &kp Q                  &kp W               &kp F             &kp P             &kp B                           &kp J    &kp L             &kp U                  &kp Y                &kp SQT
-                               &kp A                  &kp R               &kp S             &kp T             &kp G                           &kp M    &kp N             &bhmou SNIPE E      &kp I                &kp O
-                               &hml_hr LSHFT Z        &hml_hr LCTRL X     &hml_hr LALT C    &hml_hr LGUI D    &kp V                           &kp K    &hmr_hr LGUI H    &hmr_hr LALT COMMA     &hmr_hr LCTRL DOT    &hmr_hr LSHFT SLASH        
- &lm_homerow_short LALT DEL  &lm_homerow_short LSHFT BACKSPACE  &base_th_mo_kp_hp MOUSE TAB                 &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
+                               &kp Q                  &kp W               &kp F                &kp P              &kp B                             &kp J    &kp L             &kp U                  &kp Y                &kp SQT
+                               &kp A                  &kp R               &bhlmou SNIPE S      &kp T              &kp G                             &kp M    &kp N             &bhmou SNIPE E         &kp I                &kp O
+                               &hml_hr LSHFT Z        &hml_hr LCTRL X     &hml_hr LALT C       &hml_hr LGUI D     &kp V                             &kp K    &hmr_hr LGUI H    &hmr_hr LALT COMMA     &hmr_hr LCTRL DOT    &hmr_hr LSHFT SLASH        
+ &lm_homerow_short LALT DEL  &lm_homerow_short LSHFT BACKSPACE  &lm_homerow_short LGUI TAB                 &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
             >;
         };
 
         mouse_layer {
             label = "MOUSE";
             bindings = <
-&kp Q                    &kp W                  &kp F                 &kp P                 &kp B                    &kp J          &kp L              &kp U                 &kp Y                  &kp SQT
-&kp A                    &kp R                  &kp S                 &kp T                 &kp G                    &kp M          &mkp LCLK          &mo SNIPE             &mo SCROLL             &mkp RCLK
-&lrlMo LSHFT LG(Z)       &lrlMo LCTRL LG(X)     &lrlMo LALT LG(C)     &lrlMo LGUI LG(D)     &kp LG(V)                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA     &lrrMo LCTRL DOT       &lrrMo LSHFT SLASH 
- &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                    &kp F                 &kp P                 &kp B                    &kp J           &kp L                     &kp U                     &kp Y                   &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo SNIPE             &mkp LCLK             &kp G                    &kp M           &mkp LCLK                 &mo SNIPE                 &mo SCROLL              &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp V                    &kp K           &lrrMo LGUI H             &lrrMo LALT COMMA         &lrrMo LCTRL DOT        &lrrMo LSHFT SLASH 
+ &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
         basescroll_layer {
             label = "MOUSETOP";
             bindings = <
-&kp Q                    &kp W            &kp F            &kp P           &kp B                    &kp J          &kp L              &kp U                 &kp Y                  &kp SQT
-&kp A                    &kp R            &kp S            &kp T           &kp G                    &kp M          &mkp LCLK          &mo SNIPE             &mo SCROLL             &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA     &lrrMo LCTRL DOT       &lrrMo LSHFT SLASH 
- &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                    &kp F                 &kp P                 &kp B                    &kp J          &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo SNIPE             &mkp LCLK             &kp G                    &kp M          &mkp LCLK              &mo SNIPE                 &mo SCROLL                 &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp K_PASTE                    &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+ &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                        &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
          scroll_layer {
             label = "SCROLL";
             bindings = <
-&kp Q                   &kp W           &kp F           &kp P          &kp B                        &kp J         &kp L              &kp U                &kp Y                &kp SQT
-&kp A                   &kp R           &kp S           &kp T          &kp G                        &kp M         &mkp LCLK          &mo FAST             &mo SCROLL           &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K         &lrrMo LGUI H      &lrrMo LALT COMMA    &lrrMo LCTRL DOT     &lrrMo LSHFT SLASH 
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                    &kp F                &kp P                 &kp B                    &kp J           &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &kp G                    &kp M           &mkp LCLK              &mo FAST                  &mo SCROLL                 &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C       &hml_hr LGUI D        &kp V                    &kp K           &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
         snipe_layer {
             label = "SNIPE";
             bindings = <
-&kp Q                   &kp W           &kp F           &kp P          &kp B                        &kp J          &kp L              &kp U                &kp Y                &kp SQT
-&kp A                   &kp R           &kp S           &kp T          &kp G                        &kp M          &mkp LCLK          &mo SNIPE            &mo SCROLLTOP        &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA    &lrrMo LCTRL DOT     &lrrMo LSHFT SLASH 
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                       &kp F                 &kp P                 &kp B                   &kp J           &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLLTOP               &mo SNIPE             &mkp LCLK             &kp G                   &kp M           &mkp LCLK              &mo SNIPE                 &mo SCROLLTOP              &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X             &hml_hr LALT C        &hml_hr LGUI D        &kp V                   &kp K           &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
         scrolltop_layer {
             label = "SCROLLTOP";
             bindings = <
-&kp Q                    &kp W            &kp F            &kp P           &kp B                    &kp J          &kp L              &kp U                 &kp Y                 &kp SQT
-&kp A                    &kp R            &kp S            &kp T           &kp G                    &kp M          &mkp LCLK          &mo FAST              &mo SCROLL            &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA     &lrrMo LCTRL DOT       &lrrMo LSHFT SLASH 
- &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                    &kp F                &kp P                 &kp B                   &kp J          &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &kp G                   &kp M          &mkp LCLK              &mo FAST                  &mo SCROLL                 &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C       &hml_hr LGUI D        &kp V                   &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+ &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
     fast_layer {
         label = "FAST";
         bindings = <
-&kp Q                   &kp W           &kp F           &kp P          &kp B                        &kp J          &kp L              &kp U                &kp Y                &kp SQT
-&kp A                   &kp R           &kp S           &kp T          &kp G                        &kp M          &mkp LCLK          &mo SNIPE            &mo SCROLL           &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA    &lrrMo LCTRL DOT     &lrrMo LSHFT SLASH 
- &lm_homerow_short LALT DEL  &lm_homerow_short LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                    &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
+&kp Q                      &kp W                    &kp F                  &kp P                  &kp B                    &kp J          &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo SNIPE              &mkp LCLK              &kp G                    &kp M          &mkp LCLK              &mo SNIPE                 &mo SCROLL                 &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C         &hml_hr LGUI D         &kp V                    &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+ &lm_homerow_short LALT DEL  &lm_homerow_short LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                    &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
         >;
     };
 
         lower_layer {
             label = "LOWER";
             bindings = <
-                  &kp N1                   &kp N2           &kp N3           &kp N4          &kp N5                    &kp N6           &kp N7                &kp N8                    &kp N9          &kp N0
-                  &kp A                    &kp R            &kp S            &kp T           &kp G                     &kp M            &kp HOME              &kp UP                    &kp END         &kp PG_UP
-                  &lrlMo LSHFT Z           &lrlMo LCTRL X   &lrlMo LALT C    &lrlMo LGUI D   &kp V                     &kp EQUAL        &kp LEFT              &kp DOWN                  &kp RIGHT       &kp PG_DN 
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+                  &kp N1                   &kp N2               &kp N3              &kp N4              &kp N5                    &kp N6             &kp N7                &kp N8                    &kp N9             &kp N0
+                  &kp A                    &kp R                &kp S               &kp T               &kp G                     &kp PG_UP          &kp HOME              &kp UP                    &kp END            &kp F11
+                  &lrlMo LSHFT Z           &lrlMo LCTRL X       &lrlMo LALT C       &lrlMo LGUI D       &kp V                     &kp PG_DN          &kp LEFT              &kp DOWN                  &kp RIGHT          &kp F12 
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -216,7 +216,7 @@ west build -p \
                   &kp EXCL                   &kp AT                      &kp HASH                         &kp DLLR                          &kp PRCNT                       &kp CARET           &kp AMPS                   &kp STAR                  &kp LPAR                  &kp RPAR
                   &kp PIPE                   &kp LBRC                    &kp RBRC                         &kp TILDE                         &kp UNDER                       &kp PLUS            &kp COLON                  &kp LT                    &kp GT                    &kp QUESTION
                   &lrlMo LSHFT BSLH          &lrlMo LCTRL LBKT           &lrlMo LALT RBKT                 &lrlMo LGUI GRAVE                 &kp MINUS                       &kp EQUAL           &lrrMo LGUI SEMI           &lrrMo RALT COMMA         &lrrMo RCTRL DOT          &lrrMo RSHFT SLASH              
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -226,7 +226,7 @@ west build -p \
 &td_find_s_ht A LG(F)  &none                          &none                         &none               &none                                    &none       &none      &none        &none      &none
 &none                  &td_find_g_ht LG(F) LG(LS(F))  &lrlMo LA(LS(H)) LA(LS(F12))  &kp LC(LS(MINUS))   &kp LC(MINUS)                            &none       &none      &none        &none      &none 
 &kp LSHFT              &kp LCTRL                      &kp LALT                      &kp LGUI            &caps_word                               &none       &none      &none        &none      &none
-                                           &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                   &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+ &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                   &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -236,7 +236,7 @@ west build -p \
                   &kp F1     &kp F2     &kp F3                  &kp F4                    &kp F5                          &kp F6              &kp F7                     &kp F8                    &kp F9        &kp F10
                   &kp LSHFT  &kp LCTRL  &kp LALT                &kp LGUI                  &kp F11                         &kp F12             &kp RGUI                   &kp RALT                  &kp RGUI      &kp RSHFT
                   &kp LSHFT  &kp LCTRL  &kp LALT                &kp LGUI                  &kp F11                         &kp F12             &kp RGUI                   &kp RALT                  &kp RGUI      &kp RSHFT      
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -246,7 +246,7 @@ west build -p \
              &bt_0         &bt_1   &bt_2                   &bt_3                     &bt_4                           &trans                 &trans                  &trans                    &trans  &trans
              &out OUT_USB  &trans  &trans                  &trans                    &trans                          &trans                 &trans                  &trans                    &trans  &trans
              &sys_reset    &trans  &trans                  &trans                    &trans                          &trans                 &trans                  &trans                    &trans  &sys_reset  
-  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -256,17 +256,17 @@ west build -p \
                   &kp EXCL                   &kp AT             &kp HASH                &kp DLLR                  &kp PRCNT                       &kp EQUAL          &kp N7                    &kp N8                   &kp N9           &kp STAR
                   &kp PIPE                   &kp LBRC           &kp RBRC                &kp TILDE                 &kp COMMA                       &kp DOT            &kp N4                    &kp N5                   &kp N6           &kp N0
                   &kp LSHFT                  &kp LCTRL          &kp LALT                &kp LGUI                  &kp MINUS                       &kp PLUS           &kp N1                    &kp N2                   &kp N3           &lrrMo RALT SLASH       
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 
         warp_layer {
             label = "WARP";
             bindings = <
-&kp Q                   &kp W               &kp F           &kp P          &kp B                        &kp J          &kp L              &kp U                &kp Y                &kp SQT
-&kp A                   &kp R               &kp S           &kp T          &kp G                        &kp M          &mkp LCLK          &mo SNIPE            &mo SCROLL           &mkp RCLK
-&lrlMo LSHFT Z           &lrlMo LCTRL X       &lrlMo LALT C    &lrlMo LGUI D   &kp V                    &kp K          &lrrMo LGUI H      &lrrMo LALT COMMA    &lrrMo LCTRL DOT     &lrrMo LSHFT SLASH 
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                 &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+&kp Q                      &kp W                    &kp F                 &kp P                 &kp B                   &kp J          &kp L                  &kp U                     &kp Y                      &kp SQT
+&mkp RCLK                  &mo SCROLL               &mo SNIPE             &mkp LCLK             &kp G                   &kp M          &mkp LCLK              &mo SNIPE                 &mo SCROLL                 &mkp RCLK
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp V                   &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                 &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -276,7 +276,7 @@ west build -p \
 &kp LC(C_BRI_DN)       &kp LC(C_BRI_UP)           &kp C_BRI_DN                  &kp C_BRI_UP       &none                          &kp C_VOL_UP     &kp C_PREV         &kp C_PP           &kp C_NEXT      &none
 &none                  &kp LC(UP)                 &kp LC(LS(LEFT))              &kp LC(DOWN)       &kp F11                        &kp C_VOL_DN     &bt_0              &bt_1              &bt_2           &bt_3
 &kp LSHFT              &kp LCTRL                  &kp LALT                      &kp LGUI           &none                          &kp C_MUTE       &kp LGUI           &kp LALT           &kp LCTRL       &kp LSHFT
-  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp MOUSE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_kp_kp_hp LALT DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_kp_kp_hp LGUI TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
 

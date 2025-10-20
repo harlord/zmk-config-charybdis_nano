@@ -34,7 +34,7 @@
 
 
 #define MOUSE_HAND_KEYS  16 18 19
-
+#define MOUSE_LEFT_HAND_KEYS  10 11 13
 
 
 #define LEFT_THUMB_KEYS   30 31 32 33 34 35    
@@ -45,6 +45,26 @@
 
    
    behaviors {
+
+        mkp_toggle: behavior_mkp_toggle {
+            compatible = "zmk,behavior-mkp-toggle";
+            label = "MKP_TOGGLE";
+            #binding-cells = <1>;
+        };
+
+        mkp_on: mkp_toggle_on_only {
+            compatible = "zmk,behavior-mkp-toggle";
+            label = "MKP_TOGGLE";
+            #binding-cells = <1>;
+            toggle-mode = "on";   // o "on"
+        };
+
+        mkp_off: mkp_toggle_off_only {
+            compatible = "zmk,behavior-mkp-toggle";
+            label = "MKP_TOGGLE";
+            #binding-cells = <1>;
+            toggle-mode = "off";   // o "on"
+        };
 
         kt_on: key_toggle_on_only {
             compatible = "zmk,behavior-key-toggle";
@@ -292,6 +312,17 @@
             tapping-term-ms = <THUMB_HOLDING_TIME>;
             require-prior-idle-ms = <180>;
             hold-trigger-key-positions = <MOUSE_HAND_KEYS>;
+        };
+
+        bhlmou: bhlmou {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BHLMOU";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>; 
+            flavor = "balanced";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            require-prior-idle-ms = <180>;
+            hold-trigger-key-positions = <MOUSE_LEFT_HAND_KEYS>;
         };
 
     };
