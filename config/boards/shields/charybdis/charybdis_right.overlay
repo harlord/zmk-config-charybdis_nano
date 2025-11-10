@@ -61,7 +61,7 @@
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         //automouse-layer = <MOUSE>;
         scroll-layers = <SCROLL SCROLLTOP FAST>;
-        snipe-layers = <SNIPE>;
+        snipe-layers = <SNIPE SNIPETOP>;
     };
 };
 
@@ -95,6 +95,12 @@
         input-processors = <&fast_scroll_scaler 8 1>;
     };
 
+    /* Put SNIPE first so it takes priority over BASE */
+    snipe_boost {
+        layers = <SNIPE SNIPETOP>;
+        input-processors = <&xy_boost_scaler 3 2>;
+    };
+
     boost {
         layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE WARP SCROLL MOUSETOP SCROLLTOP>;
         input-processors = <&xy_boost_scaler 3 1>;
@@ -105,9 +111,5 @@
         input-processors = <&xy_boost_scaler 3 1>;
     };
 
-    snipe_boost {
-        layers = <SNIPE>;
-        input-processors = <&xy_boost_scaler 2 1>;
-    };
   };
 };

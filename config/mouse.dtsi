@@ -9,14 +9,14 @@
 // Based on @caksoylar's config, defaults in comments
 &mmv {
   acceleration-exponent = <2>;          // 1
-  time-to-max-speed-ms = <10>;         // 300
-  delay-ms = <0>;                       // 0
+  time-to-max-speed-ms = <100>;         // 300
+  delay-ms = <50>;                       // 0
 };
 
 &msc {
-  acceleration-exponent = <2>;          // 0
-  time-to-max-speed-ms = <300>;         // 300
-  delay-ms = <0>;                       // 0
+  acceleration-exponent = <1>;          // 0
+  time-to-max-speed-ms = <100>;         // 300
+  delay-ms = <50>;                       // 0
 };
 
 &mmv_input_listener {
@@ -25,7 +25,7 @@
     input-processors = <&zip_xy_scaler 3 1>;
   };
   precision {
-    layers = <SNIPE>;
+    layers = <SNIPE SNIPETOP>;
     input-processors = <&zip_xy_scaler 1 2>;
   };
 };
@@ -46,10 +46,10 @@
         input-processors = <&zip_scroll_scaler 4 1>;
     };
     precision {
-        layers = <SNIPE>;
+        layers = <SNIPE SNIPETOP>;
         input-processors = <&zip_scroll_scaler 1 2>;
     };
-       fast {                          
+    fast {                          
         layers = <FAST>;
         input-processors = <&zip_scroll_scaler 16 1>;
     };

@@ -1,6 +1,6 @@
 macros {
 
-        mc_sleep: mc_sleep {
+        mc_lock_screen: mc_lock_screen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -458,4 +458,5 @@ macros {
                 <&macro_param_1to1>,
                 <&mkp MACRO_PLACEHOLDER>;
         };
+        
     };

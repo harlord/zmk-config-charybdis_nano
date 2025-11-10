@@ -94,9 +94,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <320>;                                 
+            tapping-term-ms = <220>;                                 
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <180>;
+            require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -108,7 +108,7 @@
             flavor = "balanced";
             tapping-term-ms = <220>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <180>;
+            require-prior-idle-ms = <120>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;

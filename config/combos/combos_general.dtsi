@@ -31,14 +31,13 @@
     layers = <BASE DIRECTACC NUMBERS RAISE LOWER FUNC>; \
   };
 
-#define LCOMBOMOUACT(NAME, BINDINGS, KEYPOS) \
-  LCOMBOMOUACT_##NAME { \
+#define COMBOUACT(NAME, BINDINGS, KEYPOS) \
+  COMBOUACT_##NAME { \
     timeout-ms = <2000>; \
-    bindings = <&kp LGUI>, <BINDINGS>; \
-    key-positions = <KEYPOS>; \
+    bindings = <&kp RGUI>, <BINDINGS>; \
     slow-release; \
-    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+    key-positions = <KEYPOS>; \
+    layers = <MOUSE SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
 
 #define RCOMBOACT(NAME, BINDINGS, KEYPOS) \
@@ -63,11 +62,10 @@
 #define RCOMBOMOUSE(NAME, BINDINGS, KEYPOS) \
   rcombomouse_##NAME { \
     timeout-ms = <800>; \
-    bindings = <&kp LGUI>, <BINDINGS>; \
-    slow-release; \
+    bindings = <BINDINGS>; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
     key-positions = <KEYPOS>; \
-    layers = <MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+    layers = <MOUSE SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
 
 #define LCOMBO(NAME, BINDINGS, KEYPOS) \
@@ -82,11 +80,10 @@
 #define LCOMBOMOUSE(NAME, BINDINGS, KEYPOS) \
   lcombomou_##NAME { \
     timeout-ms = <500>; \
-    bindings = <&kp LGUI>, <BINDINGS>; \
+    bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    slow-release; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+    layers = <MOUSE SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
 
 #define COMBODIRECTACC(NAME, BINDINGS, KEYPOS) \
@@ -167,7 +164,7 @@
     key-positions-first-exclude = <32>; \
     key-positions-leader = <KEYPOS>; \
     slow-release; \
-    layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE SNIPE WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
+    layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
 
 #define CENT(BINDINGS, KEYPOS) \
@@ -216,6 +213,12 @@
 
     combos {
         compatible = "zmk,combos";
+        //THUMB LEFT HAND
+        COMBOUACT(comb_t_qwfp, &kp ESC, 0 1 2 3)
+        COMBOUACT(comb_t_qwf, &kp DELETE, 0 1 2)
+        COMBOUACT(comb_t_wfp, &kp BACKSPACE, 1 2 3)
+        COMBOUACT(comb_t_pb, &kp TAB, 3 4)
+
         //LEFT HAND
         LCOMBOACT(comb_qwfp, &kp ESC, 0 1 2 3)
         LCOMBOACT(comb_qwf, &kp DELETE, 0 1 2)
@@ -227,6 +230,12 @@
         LCOMBO(comb_sc, &kp RBKT, 12 22)// S C
         LCOMBO(comb_rx, &kp LBKT, 11 21)// R X
         LCOMBO(comb_az, &kp BSLH, 10 20)// A Z
+
+        //THUMB RIGHT HAND
+        COMBOUACT(comb_t_luysqt, &kp ESC, 6 7 8 9)
+        COMBOUACT(comb_t_uysqt, &kp CAPS, 7 8 9)
+        COMBOUACT(comb_t_luy, &kp SPACE, 6 7 8)
+        COMBOUACT(comb_t_jl, &kp ENTER, 5 6)
 
         //RIGHT HAND
         RCOMBOACT(comb_luysqt, &kp ESC, 6 7 8 9)
@@ -264,6 +273,108 @@
 
         COMBODIRECTACC(adj_tog_on, &tog_on ADJ,  0  1  2  3 )
         COMBOADJ(adj_tog_off, &tog_off ADJ,  0  1  2  3 )
+
+        //THUMB
+        combo_system_thumb_l: combo_system_thumb_l {
+            bindings = <&mo SYSTEM>;   // or your desired behavior
+            key-positions = <31 32>;     // the key you press
+            timeout-ms = <300>;       // regular combo timeout
+            slow-release;
+        };
+
+        combo_system_thumb_r: combo_system_thumb_r {
+            bindings = <&kp LALT>;   // or your desired behavior
+            key-positions = <33 34>;     // the key you press
+            timeout-ms = <300>;       // regular combo timeout
+            slow-release;
+        };
+
+         combo_mouse_thumb: combo_mouse_thumb {
+            bindings = <&mo SNIPETOP>;   // or your desired behavior
+            key-positions = <32>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        };
+
+/*
+       //EDIT THUMB POINTER
+
+       combo_pm_cut: combo_pm_cut {
+            bindings = <&kp RG(X)>;   // or your desired behavior
+            key-positions = <32 21>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP SNIPETOP>;          // where it applies
+        };
+
+        combo_pm_copy: combo_pm_copy {
+            bindings = <&kp RG(C)>;   // or your desired behavior
+            key-positions = <32 22>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP SNIPETOP>;          // where it applies
+        };
+
+        combo_pm_paste: combo_pm_paste {
+            bindings = <&kp RG(V)>;   // or your desired behavior
+            key-positions = <32 23>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+
+        combo_pm_save: combo_pm_save {
+            bindings = <&kp RG(S)>;   // or your desired behavior
+            key-positions = <32 12>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+*/
+
+        //EDIT POINTER
+        combo_t_cut: combo_t_cut {
+            bindings = <&kp RG(X)>;   // or your desired behavior
+            key-positions = <21>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+
+        combo_t_copy: combo_t_copy {
+            bindings = <&kp RG(C)>;   // or your desired behavior
+            key-positions = <22>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+
+        combo_t_paste: combo_t_paste {
+            bindings = <&kp RG(V)>;   // or your desired behavior
+            key-positions = <23>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+
+        combo_t_save: combo_t_save {
+            bindings = <&kp RG(S)>;   // or your desired behavior
+            key-positions = <12>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            require-pointer-move;     // gate on movement
+            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC SNIPE SNIPETOP>;          // where it applies
+        };
+
 
               
        // RIGHT MOUSE
