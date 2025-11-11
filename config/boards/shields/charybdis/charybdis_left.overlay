@@ -18,3 +18,48 @@
 		, <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
 };
+
+/* RGB underglow / per-key LEDs on pin P1.13 (pro_micro 113) */
+#include <dt-bindings/led/led.h>
+
+&pinctrl {
+    spi3_left_default: spi3_left_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 13)>; /* Data In on P1.13 */
+        };
+    };
+
+    spi3_left_sleep: spi3_left_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 13)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_left_default>;
+    pinctrl-1 = <&spi3_left_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+
+        /* Number of SK6812/WS2812-compatible LEDs on LEFT half */
+        chain-length = <18>;
+        /* GRB order is typical for WS2812/SK6812 RGB variants */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
