@@ -85,7 +85,7 @@
 
 &spi3 {
     compatible = "nordic,nrf-spim";
-    status = "okay";
+    status = "okay";  // ← Re-habilitado con frecuencia baja
     pinctrl-0 = <&spi3_right_default>;
     pinctrl-1 = <&spi3_right_sleep>;
     pinctrl-names = "default", "sleep";

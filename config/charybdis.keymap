@@ -245,9 +245,9 @@ west build -p \
         layer_func {
             label = "FUNC";
             bindings = <
-        &kp F1      &kp F2         &kp F3                &kp F4           &kp F5                          &kp F6             &kp F7              &kp F8            &kp F9        &kp F10
-        &kp LSHFT   &kp LC(UP)     &kp LC(LS(LEFT))      &kp LC(DOWN)     &kp F11                         &kp F12            &kp F12             &rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
-        &kp LSHFT   &kp LCTRL      &kp LALT              &kp LGUI         &kp F11                         &kp F12            &kp RGUI            &kp RALT          &kp RGUI      &kp RSHFT      
+        &kp F1      &kp F2         &kp F3                &kp F4           &kp F5                          &kp F6             &kp F7              &kp F8            &kp F9            &kp F10
+        &kp LSHFT   &kp LC(UP)     &kp LC(LS(LEFT))      &kp LC(DOWN)     &kp F11                         &kp F12            &rgb_ug RGB_TOG     &rgb_ug RGB_EFF   &rgb_ug RGB_BRD   &rgb_ug RGB_BRI
+        &kp LSHFT   &kp LCTRL      &kp LALT              &kp LGUI         &kp F11                         &kp F12            &kp RGUI            &kp RALT          &kp RGUI          &kp RSHFT      
   &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
