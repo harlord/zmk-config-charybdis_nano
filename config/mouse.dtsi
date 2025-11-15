@@ -51,7 +51,7 @@
     };
     fast {                          
         layers = <FAST>;
-        input-processors = <&zip_scroll_scaler 16 1>;
+        input-processors = <&zip_scroll_scaler 25 1>;
     };
 };
 
