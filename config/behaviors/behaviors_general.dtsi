@@ -150,7 +150,7 @@
             label = "BT_0";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&bt_select_disc_0>, <&out OUT_USB>, <&bt_pairing_c 0>;
+            bindings = <&bt_select_disc_0>, <&bt_pairing_c 0>;
         };
 
         bt_1: bt_1 {
@@ -158,7 +158,7 @@
             label = "BT_1";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&bt_select_disc_1>, <&out OUT_USB>, <&bt_pairing_c 1>;
+            bindings = <&bt_select_disc_1>, <&bt_pairing_c 1>;
         };
 
         bt_2: bt_2 {
@@ -166,7 +166,7 @@
             label = "BT_2";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&bt_select_disc_2>, <&out OUT_USB>, <&bt_pairing_c 2>;
+            bindings = <&bt_select_disc_2>, <&bt_pairing_c 2>;
         };
 
         bt_3: bt_3 {
@@ -174,7 +174,7 @@
             label = "BT_3";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&bt_select_disc_3>, <&out OUT_USB>, <&bt_pairing_c 3>;
+            bindings = <&bt_select_disc_3>, <&bt_pairing_c 3>;
         };
 
         bt_4: bt_4 {
@@ -182,7 +182,7 @@
             label = "BT_4";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
-            bindings = <&bt_select_disc_4>, <&out OUT_USB>, <&bt_pairing_c 4>;
+            bindings = <&bt_select_disc_4>, <&bt_pairing_c 4>;
         };
 
         tog_on: toggle_layer_on_only {

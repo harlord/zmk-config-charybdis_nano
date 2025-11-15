@@ -443,15 +443,6 @@
             layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
         };
 
-        combo_snipel_lh_l_up: combo_snipe_lh_l_up {
-            bindings = <&mo SCROLLTOP>;   // or your desired behavior
-            key-positions = <11>;     // the key you press
-            timeout-ms = <1000>;       // regular combo timeout
-            require-pointer-move;     // gate on movement
-            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
-            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
-        };
-
         combo_mouse_lh_l: combo_mouse_lh_l {
             bindings = <&mcmou LCLK>;   // or your desired behavior
             key-positions = <13>;     // the key you press

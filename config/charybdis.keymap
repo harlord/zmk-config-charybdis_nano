@@ -246,7 +246,7 @@ west build -p \
             label = "FUNC";
             bindings = <
         &kp F1      &kp F2         &kp F3                &kp F4           &kp F5                          &kp F6             &kp F7              &kp F8            &kp F9            &kp F10
-        &kp LSHFT   &kp LC(UP)     &kp LC(LS(LEFT))      &kp LC(DOWN)     &kp F11                         &kp F12            &rgb_ug RGB_TOG     &rgb_ug RGB_EFF   &rgb_ug RGB_BRD   &rgb_ug RGB_BRI
+        &kp LSHFT   &kp LC(UP)     &kp LC(LS(LEFT))      &kp LC(DOWN)     &kp F11                         &kp F12            &kp F13             &kp F14           &kp F15           &kp F16 
         &kp LSHFT   &kp LCTRL      &kp LALT              &kp LGUI         &kp F11                         &kp F12            &kp RGUI            &kp RALT          &kp RGUI          &kp RSHFT      
   &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
@@ -255,9 +255,9 @@ west build -p \
         adjust_layer {
             label = "ADJ";
             bindings = <
-             &bt_0         &bt_1   &bt_2                   &bt_3                     &bt_4                           &trans                 &trans                  &trans                    &trans  &trans
-             &out OUT_USB  &trans  &trans                  &trans                    &trans                          &trans                 &trans                  &trans                    &trans  &trans
-             &sys_reset    &trans  &trans                  &trans                    &trans                          &trans                 &trans                  &trans                    &trans  &sys_reset  
+            &bt_0               &bt_1               &bt_2               &bt_3               &bt_4                          &out OUT_USB            &trans                    &trans                    &trans           &trans
+            &rgb_ug RGB_SPI     &rgb_ug RGB_SAI     &rgb_ug RGB_HUI     &rgb_ug RGB_BRI     &rgb_ug RGB_TOG                &sys_reset              &trans                    &trans                    &trans           &trans
+            &rgb_ug RGB_SPD     &rgb_ug RGB_SAD     &rgb_ug RGB_HUD     &rgb_ug RGB_BRD     &rgb_ug RGB_EFF                &trans                  &trans                    &trans                    &trans           &trans
   &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
             >;
         };
