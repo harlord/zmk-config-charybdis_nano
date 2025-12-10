@@ -145,6 +145,13 @@
             hold-trigger-on-release;
         };
 
+        ref_imp: ref_imp {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&kp LA(LS(F12))>, <&kp LA(LS(H))>;
+        };
+        
         bt_0: bt_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "BT_0";
