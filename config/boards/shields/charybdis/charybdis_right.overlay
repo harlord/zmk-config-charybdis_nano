@@ -43,6 +43,20 @@
             low-power-enable;
         };
     };
+
+    /* RGB underglow / per-key LEDs on pin P1.13 (pro_micro 113) */
+    spi3_right_default: spi3_right_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 13)>;
+        };
+    };
+
+    spi3_right_sleep: spi3_right_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 13)>;
+            low-power-enable;
+        };
+    };
 };
 
 &spi0 {
@@ -59,12 +73,40 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        //automouse-layer = <MOUSE>;
         scroll-layers = <SCROLL SCROLLTOP FAST>;
         snipe-layers = <SNIPE SNIPETOP>;
     };
 };
 
+/ {
+  #include <dt-bindings/led/led.h>
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";  // ← Re-habilitado con frecuencia baja
+    pinctrl-0 = <&spi3_right_default>;
+    pinctrl-1 = <&spi3_right_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+
+        /* Number of SK6812/WS2812-compatible LEDs on RIGHT half */
+        chain-length = <17>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
+/ {
+  chosen {
+    zmk,underglow = &led_strip;
+  };
+};
 / {
   fast_scroll_scaler: fast_scroll_scaler {
     compatible = "zmk,input-processor-scaler";
@@ -102,12 +144,12 @@
     };
 
     boost {
-        layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE WARP SCROLL MOUSETOP SCROLLTOP>;
+        layers = <BASE DIRECTACC NUMBERS RAISE FUNC WARP SCROLL MOUSETOP SCROLLTOP>;
         input-processors = <&xy_boost_scaler 3 1>;
     };
 
     boost_top {
-        layers = <BASE DIRECTACC NUMBERS RAISE FUNC MOUSE WARP SCROLL MOUSETOP SCROLLTOP>;
+        layers = <BASE DIRECTACC NUMBERS RAISE FUNC WARP SCROLL MOUSETOP SCROLLTOP>;
         input-processors = <&xy_boost_scaler 3 1>;
     };
 
