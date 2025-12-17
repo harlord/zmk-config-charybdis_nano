@@ -69,7 +69,6 @@ west build -p \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DSHIELD=charybdis_left
-
 */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
@@ -136,7 +135,7 @@ west build -p \
             label = "BASE";
             bindings = <
                                &kp Q                  &kp W               &kp F                &kp P              &kp B                             &kp J    &kp L             &kp U                  &kp Y                &kp SQT
-                               &kp A                  &kp R               &bhlmou SNIPE S      &kp T              &kp G                             &kp M    &kp N             &bhmou SNIPE E         &kp I                &kp O
+                               &kp A                  &kp R               &bhlmou SNIPE S      &kp T              &kp G                             &kp M    &kp N             &kp E                  &kp I                &kp O
                                &hml_hr LSHFT Z        &hml_hr LCTRL X     &hml_hr LALT C       &hml_hr LGUI D     &kp V                             &kp K    &hmr_hr LGUI H    &hmr_hr LALT COMMA     &hmr_hr LCTRL DOT    &hmr_hr LSHFT SLASH        
  &base_th_mo_kp_hp FUNC DEL  &lm_homerow_short LSHFT BACKSPACE  &base_th_mo_kp_hp SNIPETOP TAB                 &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
             >;

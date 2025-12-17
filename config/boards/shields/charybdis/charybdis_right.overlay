@@ -107,6 +107,7 @@
     zmk,underglow = &led_strip;
   };
 };
+
 / {
   fast_scroll_scaler: fast_scroll_scaler {
     compatible = "zmk,input-processor-scaler";

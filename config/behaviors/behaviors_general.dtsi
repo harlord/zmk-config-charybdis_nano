@@ -33,7 +33,6 @@
 #define SLOW_THUMB_KEYS  37 
 
 
-#define MOUSE_HAND_KEYS  16 18 19
 #define MOUSE_LEFT_HAND_KEYS  10 11 13
 
 
@@ -94,9 +93,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <220>;                                 
+            tapping-term-ms = <250>;                                 
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -106,9 +105,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -310,16 +309,6 @@
             bindings = <&gpfind>, <&kp>;
         };
 
-        bhmou: bhmou {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BHMOU";
-            bindings = <&mo>, <&kp>;
-            #binding-cells = <2>; 
-            flavor = "balanced";
-            tapping-term-ms = <THUMB_HOLDING_TIME>;
-            require-prior-idle-ms = <180>;
-            hold-trigger-key-positions = <MOUSE_HAND_KEYS>;
-        };
 
         bhlmou: bhlmou {
             compatible = "zmk,behavior-hold-tap";
