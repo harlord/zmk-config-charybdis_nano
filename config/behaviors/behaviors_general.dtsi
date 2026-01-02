@@ -47,20 +47,17 @@
 
         mkp_toggle: behavior_mkp_toggle {
             compatible = "zmk,behavior-mkp-toggle";
-            label = "MKP_TOGGLE";
             #binding-cells = <1>;
         };
 
         mkp_on: mkp_toggle_on_only {
             compatible = "zmk,behavior-mkp-toggle";
-            label = "MKP_TOGGLE";
             #binding-cells = <1>;
             toggle-mode = "on";   // o "on"
         };
 
         mkp_off: mkp_toggle_off_only {
             compatible = "zmk,behavior-mkp-toggle";
-            label = "MKP_TOGGLE";
             #binding-cells = <1>;
             toggle-mode = "off";   // o "on"
         };
@@ -124,7 +121,6 @@
 
         lrlMo: lrlMo {
             compatible = "zmk,behavior-hold-tap";
-            label = "LRLMO";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             flavor = "balanced";
@@ -135,7 +131,6 @@
 
         lrrMo: lrrMo {
             compatible = "zmk,behavior-hold-tap";
-            label = "LRRMO";
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>; 
             flavor = "balanced";
@@ -153,7 +148,6 @@
         
         bt_0: bt_0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_0";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
             bindings = <&bt_select_disc_0>, <&bt_pairing_c 0>;
@@ -161,7 +155,6 @@
 
         bt_1: bt_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_1";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
             bindings = <&bt_select_disc_1>, <&bt_pairing_c 1>;
@@ -169,7 +162,6 @@
 
         bt_2: bt_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_2";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
             bindings = <&bt_select_disc_2>, <&bt_pairing_c 2>;
@@ -177,7 +169,6 @@
 
         bt_3: bt_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_3";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
             bindings = <&bt_select_disc_3>, <&bt_pairing_c 3>;
@@ -185,7 +176,6 @@
 
         bt_4: bt_4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_4";
             #binding-cells = <0>;
             tapping-term-ms = <1000>;
             bindings = <&bt_select_disc_4>, <&bt_pairing_c 4>;
@@ -209,8 +199,8 @@
         tdSelectCoppingLR: tdSelectCoppingLR {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&scl_l_to_r>, <&scw_l_to_r>;
         };
@@ -285,8 +275,8 @@
         tdSelectCoppingRL: tdSelectCoppingRL {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&scl_r_to_l>, <&scw_r_to_l>;
         };
@@ -294,8 +284,8 @@
         td_find_s_ht: td_find_s_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&pfind>, <&kp>;
         };
@@ -303,8 +293,8 @@
         td_find_g_ht: td_find_g_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&gpfind>, <&kp>;
         };
@@ -312,7 +302,6 @@
 
         bhlmou: bhlmou {
             compatible = "zmk,behavior-hold-tap";
-            label = "BHLMOU";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>; 
             flavor = "balanced";

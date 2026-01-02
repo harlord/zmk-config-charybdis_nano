@@ -12,7 +12,7 @@ west zephyr-export         # sets Zephyr CMake package files in venv
 
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/right \
+  -s zmk/app -b nice_nano -d build/right \
   -S zmk-usb-logging \
   -S studio-rpc-usb-uart \
   -- \
@@ -23,7 +23,7 @@ west build -p \
 
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/left \
+  -s zmk/app -b nice_nano -d build/left \
   -S zmk-usb-logging \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
@@ -41,7 +41,7 @@ west build -p \
 -------------------------------------------------
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/right \
+  -s zmk/app -b nice_nano -d build/right \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
@@ -50,7 +50,7 @@ west build -p \
 
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/left \
+  -s zmk/app -b nice_nano -d build/left \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
@@ -59,20 +59,20 @@ west build -p \
 
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/right \
+  -s zmk/app -b nice_nano -d build/right \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DSHIELD=charybdis_right
 
 west build -p \
-  -s zmk/app -b nice_nano_v2 -d build/left \
+  -s zmk/app -b nice_nano -d build/left \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DSHIELD=charybdis_left
 */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
-//#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+// ZMK_POINTING_DEFAULT_MOVE_VAL and ZMK_POINTING_DEFAULT_SCRL_VAL
+// are defined in mouse.dtsi (included below)
 
 /* On demand includes */
 
