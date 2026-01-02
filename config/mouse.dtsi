@@ -1,4 +1,12 @@
 // Settings tuned for 3840 x 2160 display resolution
+// Undefine first to avoid redefinition warnings (these are defined in pointing.h)
+#ifdef ZMK_POINTING_DEFAULT_MOVE_VAL
+#undef ZMK_POINTING_DEFAULT_MOVE_VAL
+#endif
+#ifdef ZMK_POINTING_DEFAULT_SCRL_VAL
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL
+#endif
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 900 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 5  // 10
 
