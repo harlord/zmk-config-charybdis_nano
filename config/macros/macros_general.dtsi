@@ -5,61 +5,50 @@ macros {
             #binding-cells = <0>;
             bindings =
                 <&macro_tap_time 1000>,
-                <&kp LG(LC(Q))>,
+                <&macro_tap &kp LG(LC(Q))>,
                 <&macro_tap_time 20>,
-                <&kp ESC>;
+                <&macro_tap &kp ESC>;
         };
 
         mc_cmd_shift: mc_cmd_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&kp LGUI>,
+                <&macro_press &kp LSHFT>,
+                <&macro_press &kp LGUI>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LGUI>,
-                <&kp LSHFT>;
+                <&macro_release &kp LGUI>,
+                <&macro_release &kp LSHFT>;
         };
 
         mc_alt_shift: mc_alt_shift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&kp LGUI>,
+                <&macro_press &kp LALT>,
+                <&macro_press &kp LGUI>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LGUI>,
-                <&kp LALT>;
+                <&macro_release &kp LGUI>,
+                <&macro_release &kp LALT>;
         };
 
         mshon: mshon {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
                 <&macro_param_1to1>,
-                <&kp MACRO_PLACEHOLDER>,
+                <&macro_press &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_param_1to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&kt_on LSHFT>;
+                <&macro_release &kp MACRO_PLACEHOLDER>,
+                <&macro_tap &kt_on LSHFT>;
         };
 
         mshoff: mshoff {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_tap>,
-                <&kt_off LSHFT>;
+                <&macro_tap &kt_off LSHFT>;
         };
 
         // mc_bkctilde
@@ -68,9 +57,9 @@ macros {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&kp LA(E)>,
-                <&macro_tap>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+                <&macro_tap &kp LA(E)>,
+                <&macro_param_1to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
         mc_tilde: mc_tilde {
@@ -79,9 +68,10 @@ macros {
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings =
-                <&macro_tap>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
-                <&macro_param_2to1 &kp MACRO_PLACEHOLDER>;
+                <&macro_param_1to1>,
+                <&macro_tap &mo MACRO_PLACEHOLDER>,
+                <&macro_param_2to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
         // mc_enne
@@ -90,8 +80,9 @@ macros {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_tap>,
-                <&kp LA(N) &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+                <&macro_tap &kp LA(N)>,
+                <&macro_param_1to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
         mc_ennesd: mac_enne_shift_delete {
@@ -100,8 +91,8 @@ macros {
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&macro_tap>,
-                <&macro_param_1to1 &mc_enne MACRO_PLACEHOLDER>;
+                <&macro_param_1to1>,
+                <&macro_tap &mc_enne MACRO_PLACEHOLDER>;
         };
 
         mc_quesd: mc_quesd {
@@ -110,13 +101,10 @@ macros {
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LA(LS(FSLH))>,
-                <&macro_press>,
-                <&sk LSHFT>,
+                <&macro_tap &kp LA(LS(FSLH))>,
+                <&macro_press &sk LSHFT>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&sk LSHFT>;
+                <&macro_release &sk LSHFT>;
         };
 
         // Select a line copping from left to right
@@ -125,14 +113,11 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LG(LEFT)>,
+                <&macro_tap &kp LG(LEFT)>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(LS(RIGHT))>,
+                <&macro_tap &kp LG(LS(RIGHT))>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_tap &kp LG(C)>;
         };
 
         // Select a line copping from left to right
@@ -141,14 +126,11 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LG(RIGHT)>,
+                <&macro_tap &kp LG(RIGHT)>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(LS(LEFT))>,
+                <&macro_tap &kp LG(LS(LEFT))>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_tap &kp LG(C)>;
         };
 
         // Select a word from right to left
@@ -157,14 +139,11 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LA(RIGHT)>,
+                <&macro_tap &kp LA(RIGHT)>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LA(LS(LEFT))>,
+                <&macro_tap &kp LA(LS(LEFT))>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_tap &kp LG(C)>;
         };
 
         // Select a word from right to left
@@ -173,14 +152,11 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LA(LEFT)>,
+                <&macro_tap &kp LA(LEFT)>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LA(LS(RIGHT))>,
+                <&macro_tap &kp LA(LS(RIGHT))>,
                 <&macro_wait_time 5>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_tap &kp LG(C)>;
         };
 
         // Select and copy forward a word from right to left
@@ -189,13 +165,10 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LA(LS(LEFT))>,
+                <&macro_press &kp LA(LS(LEFT))>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LA(LS(LEFT))>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_release &kp LA(LS(LEFT))>,
+                <&macro_tap &kp LG(C)>;
         };
 
         // Select and copy forward a word from left to right
@@ -204,164 +177,130 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LA(LS(RIGHT))>,
+                <&macro_press &kp LA(LS(RIGHT))>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LA(LS(RIGHT))>,
-                <&macro_tap>,
-                <&kp LG(C)>;
+                <&macro_release &kp LA(LS(RIGHT))>,
+                <&macro_tap &kp LG(C)>;
         };
 
         bt_disc_0: bt_disc_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt BT_DISC 1>,
+                <&macro_tap &bt BT_DISC 1>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 2>,
+                <&macro_tap &bt BT_DISC 2>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 3>,
+                <&macro_tap &bt BT_DISC 3>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 4>;
+                <&macro_tap &bt BT_DISC 4>;
         };
 
         bt_disc_1: bt_disc_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt BT_DISC 0>,
+                <&macro_tap &bt BT_DISC 0>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 2>,
+                <&macro_tap &bt BT_DISC 2>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 3>,
+                <&macro_tap &bt BT_DISC 3>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 4>;
+                <&macro_tap &bt BT_DISC 4>;
         };
 
         bt_disc_2: bt_disc_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt BT_DISC 0>,
+                <&macro_tap &bt BT_DISC 0>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 1>,
+                <&macro_tap &bt BT_DISC 1>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 3>,
+                <&macro_tap &bt BT_DISC 3>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 4>;
+                <&macro_tap &bt BT_DISC 4>;
         };
 
         bt_disc_3: bt_disc_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt BT_DISC 0>,
+                <&macro_tap &bt BT_DISC 0>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 1>,
+                <&macro_tap &bt BT_DISC 1>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 2>,
+                <&macro_tap &bt BT_DISC 2>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 4>;
+                <&macro_tap &bt BT_DISC 4>;
         };
 
         bt_disc_4: bt_disc_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt BT_DISC 0>,
+                <&macro_tap &bt BT_DISC 0>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 1>,
+                <&macro_tap &bt BT_DISC 1>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 2>,
+                <&macro_tap &bt BT_DISC 2>,
                 <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_DISC 3>;
+                <&macro_tap &bt BT_DISC 3>;
         };
 
         bt_select_disc_0: bt_select_disc_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt_select_c 0>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt_disc_0>;
+                <&macro_tap &bt_select_c 0>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt_disc_0>;
         };
 
         bt_select_disc_1: bt_select_disc_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt_select_c 1>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt_disc_1>;
+                <&macro_tap &bt_select_c 1>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt_disc_1>;
         };
 
         bt_select_disc_2: bt_select_disc_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt_select_c 2>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt_disc_2>;
+                <&macro_tap &bt_select_c 2>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt_disc_2>;
         };
 
         bt_select_disc_3: bt_select_disc_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt_select_c 3>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt_disc_3>;
+                <&macro_tap &bt_select_c 3>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt_disc_3>;
         };
 
         bt_select_disc_4: bt_select_disc_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&bt_select_c 4>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt_disc_4>;
+                <&macro_tap &bt_select_c 4>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt_disc_4>;
         };
 
         bt_select_c: bt_select_c {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_tap>,
-                <&out OUT_BLE &macro_param_1to2>,
+                <&macro_tap &out OUT_BLE>,
                 <&macro_wait_time 200>,
-                <&macro_tap>,
-                <&bt BT_SEL MACRO_PLACEHOLDER>;
+                <&macro_param_1to2>,
+                <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>;
         };
 
         bt_pairing_c: bt_pairing_c {
@@ -369,11 +308,12 @@ macros {
             #binding-cells = <1>;
             bindings =
                 <&macro_param_1to1>,
-                <&macro_tap>,
-                <&bt_select_c MACRO_PLACEHOLDER>,
-                <&macro_wait_time 20>,
-                <&macro_tap>,
-                <&bt BT_CLR>;
+                <&macro_tap &bt_select_c MACRO_PLACEHOLDER>,
+                <&macro_wait_time 100>,
+                <&macro_tap &bt BT_CLR_ALL>,
+                <&macro_wait_time 100>,
+                <&macro_param_1to1>,
+                <&macro_tap &bt_select_c MACRO_PLACEHOLDER>;
         };
 
 
@@ -383,11 +323,9 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LG(F)>,
+                <&macro_tap &kp LG(F)>,
                 <&macro_wait_time 10>,
-                <&macro_tap>,
-                <&kp LG(V)>;
+                <&macro_tap &kp LG(V)>;
         };
 
         // Global Find Paste
@@ -396,11 +334,9 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&kp LG(LS(F))>,
+                <&macro_tap &kp LG(LS(F))>,
                 <&macro_wait_time 10>,
-                <&macro_tap>,
-                <&kp LG(V)>;
+                <&macro_tap &kp LG(V)>;
         };
 
         mcmou: mcmou {
@@ -409,15 +345,13 @@ macros {
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&mo MOUSETOP>,
+                <&macro_press &mo MOUSETOP>,
                 <&macro_param_1to1>,
-                <&mkp MACRO_PLACEHOLDER>,
+                <&macro_press &mkp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo MOUSETOP>,
+                <&macro_release &mo MOUSETOP>,
                 <&macro_param_1to1>,
-                <&mkp MACRO_PLACEHOLDER>;
+                <&macro_release &mkp MACRO_PLACEHOLDER>;
         };
 
         mcsnp: mcsnp {
@@ -426,15 +360,24 @@ macros {
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&mo SNIPE>,
+                <&macro_press &mo SNIPE>,
                 <&macro_param_1to1>,
-                <&mkp MACRO_PLACEHOLDER>,
+                <&macro_press &mkp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo SNIPE>,
+                <&macro_release &mo SNIPE>,
                 <&macro_param_1to1>,
-                <&mkp MACRO_PLACEHOLDER>;
+                <&macro_release &mkp MACRO_PLACEHOLDER>;
+        };
+
+        mc_two_tap: mc_two_tap {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_param_1to1>,                
+                <&macro_tap &kp MACRO_PLACEHOLDER>,
+                <&macro_wait_time 20>,
+                <&macro_param_1to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>;
         };
         
     };
