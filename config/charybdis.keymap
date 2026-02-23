@@ -140,15 +140,6 @@ west build -p \
             >;
         };
 
-        basescroll_layer {
-            bindings = <
-&kp Q                      &kp W                    &kp F                 &kp P                 &kp B                                   &kp J           &kp HOME              &kp UP                    &kp END                    &kp PG_UP
-&mkp RCLK                  &mo SCROLL               &mo SNIPE             &mkp LCLK             &mkp RCLK                               &kp M           &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
-&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp K_PASTE                             &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
- &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                        &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
-            >;
-        };
-
          scroll_layer {
             bindings = <
 &kp Q                      &kp W                    &kp F                &kp P                 &kp B                                 &kp J           &kp HOME              &kp UP                    &kp END                    &kp PG_UP
@@ -161,7 +152,7 @@ west build -p \
         snipe_layer {
             bindings = <
 &kp RG(Q)                  &kp RG(W)                   &kp RG(F)             &kp RG(P)             &kp RG(B)                             &kp LC(LS(MINUS))           &kp HOME              &kp UP                    &kp END                    &kp PG_UP
-&kp RG(A)                  &mo SCROLLTOP               &kp RG(S)             &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
+&kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP            &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
 &hml_hr LSHFT RG(Z)        &hml_hr LCTRL RG(X)         &hml_hr LALT RG(C)    &hml_hr LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo LGUI RG(H)      &lrrMo LALT RG(COMMA)     &lrrMo LCTRL RG(DOT)       &lrrMo LSHFT RG(SLASH) 
   &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
@@ -170,9 +161,18 @@ west build -p \
         snipetop_layer {
             bindings = <
 &kp RG(Q)                  &kp RG(W)                   &kp RG(F)             &kp RG(P)             &kp RG(B)                             &kp LC(LS(MINUS))           &kp HOME              &kp UP                    &kp END                    &kp PG_UP
-&kp RG(A)                  &mo SCROLLTOP               &kp RG(S)             &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
+&kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP            &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
 &hml_hr LSHFT RG(Z)        &hml_hr LCTRL RG(X)         &hml_hr LALT RG(C)    &hml_hr LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo LGUI RG(H)      &lrrMo LALT RG(COMMA)     &lrrMo LCTRL RG(DOT)       &lrrMo LSHFT RG(SLASH) 
   &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+            >;
+        };
+
+        mousetop_layer {
+            bindings = <
+&kp Q                      &kp W                    &kp F                 &kp P                 &kp B                                   &kp J           &kp HOME              &kp UP                    &kp END                    &kp PG_UP
+&mkp RCLK                  &mo SCROLLTOP            &mo SNIPE             &mkp LCLK             &mkp RCLK                               &kp M           &kp LEFT              &kp DOWN                  &kp RIGHT                  &kp PG_DN
+&hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp K_PASTE                             &kp K          &lrrMo LGUI H          &lrrMo LALT COMMA         &lrrMo LCTRL DOT           &lrrMo LSHFT SLASH 
+ &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                        &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -235,7 +235,7 @@ west build -p \
             &bt_0               &bt_1               &bt_2               &bt_3               &bt_4                                       &out OUT_USB            &trans                    &trans                    &trans           &trans
             &rgb_ug RGB_SPI     &rgb_ug RGB_SAI     &rgb_ug RGB_HUI     &rgb_ug RGB_BRI     &rgb_ug RGB_TOG                             &sys_reset              &trans                    &trans                    &trans           &trans
             &rgb_ug RGB_SPD     &rgb_ug RGB_SAD     &rgb_ug RGB_HUD     &rgb_ug RGB_BRD     &rgb_ug RGB_EFF                             &trans                  &trans                    &trans                    &trans           &trans
-  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE  
+  &th_mo_kp_hp FUNC DEL   &bootloader   &sys_reset                                                &sys_reset   &bootloader 
             >;
         };
 

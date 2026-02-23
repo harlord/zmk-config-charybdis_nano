@@ -1,8 +1,8 @@
 #define BASE 0
-#define MOUSETOP 1
-#define SCROLL 2
-#define SNIPE 3
-#define SNIPETOP 4
+#define SCROLL 1
+#define SNIPE 2
+#define SNIPETOP 3
+#define MOUSETOP 4
 #define SCROLLTOP 5
 #define FAST 6
 #define LOWER 7

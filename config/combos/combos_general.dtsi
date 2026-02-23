@@ -320,14 +320,14 @@
             layers = <SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>;          // where it applies
         };
 
-        combo_t_save: combo_t_save {
-            bindings = <&kp RG(S)>;   // or your desired behavior
-            key-positions = <12>;     // the key you press
-            timeout-ms = <1000>;       // regular combo timeout
-            require-pointer-move;     // gate on movement
-            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
-            layers = <SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP>;          // where it applies
-        };
+        // combo_t_save: combo_t_save {
+        //     bindings = <&kp RG(S)>;
+        //     key-positions = <12>;
+        //     timeout-ms = <1000>;
+        //     require-pointer-move;
+        //     pointer-move-timeout-ms = <500>;
+        //     layers = <SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP>;
+        // };
 
 
         // LEFT MOUSE

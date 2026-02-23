@@ -77,10 +77,9 @@
         /* Swap axes for 90° rotation, adjust inverts as needed */
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
-        res-cpi = <400>;
-        invert-y;
+        res-cpi = <200>;  /* Lower CPI = less sensitive to tiny vibrations */
         invert-x;
-        smart-mode;
+        invert-y;
     };
 };
 
@@ -115,21 +114,48 @@
 };
 
 / {
-  fast_scroll_scaler: fast_scroll_scaler {
+  /* Convert X/Y mouse movement to scroll wheel */
+  xy_to_scroll: xy_to_scroll {
+    compatible = "zmk,input-processor-code-mapper";
+    #input-processor-cells = <0>;
+    type = <INPUT_EV_REL>;
+    map = <INPUT_REL_X INPUT_REL_HWHEEL>
+        , <INPUT_REL_Y INPUT_REL_WHEEL>;
+  };
+
+  /* Scaler for vertical scroll (negative inverts) */
+  vscroll_scaler: vscroll_scaler {
     compatible = "zmk,input-processor-scaler";
     #input-processor-cells = <2>;
     type = <INPUT_EV_REL>;
-    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+    codes = <INPUT_REL_WHEEL>;
     track-remainders;
   };
-};
 
-/ {
-  xy_boost_scaler: xy_boost_scaler {
+  /* Scaler for horizontal scroll (positive because invert-x already inverts) */
+  hscroll_scaler: hscroll_scaler {
     compatible = "zmk,input-processor-scaler";
     #input-processor-cells = <2>;
     type = <INPUT_EV_REL>;
-    codes = <INPUT_REL_X INPUT_REL_Y>;
+    codes = <INPUT_REL_HWHEEL>;
+    track-remainders;
+  };
+
+  /* Scaler for mouse Y movement */
+  y_scaler: y_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_Y>;
+    track-remainders;
+  };
+
+  /* Scaler for mouse X movement (compensate for invert-y on cursor) */
+  x_scaler: x_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_X>;
     track-remainders;
   };
 };
@@ -139,25 +165,34 @@
     compatible = "zmk,input-listener";
     device = <&trackball>;
 
-    fast {
+    /* Fast scroll layer - MUST be first to take priority over scroll_mode */
+    fast_scroll {
         layers = <FAST>;
-        input-processors = <&fast_scroll_scaler 8 1>;
+        input-processors = <&xy_to_scroll>, <&vscroll_scaler (-1) 4>, <&hscroll_scaler 1 4>;
     };
 
-    /* Put SNIPE first so it takes priority over BASE */
-    snipe_boost {
+    /* Scroll layers - inverted both axes */
+    scroll_mode {
+        layers = <SCROLL SCROLLTOP>;
+        input-processors = <&xy_to_scroll>, <&vscroll_scaler (-1) 20>, <&hscroll_scaler 1 20>;
+    };
+
+    /* MOUSETOP override - base speed even when SNIPE/SNIPETOP are active */
+    mousetop_override {
+        layers = <MOUSETOP>;
+        input-processors = <&y_scaler 3 1>, <&x_scaler 3 1>;
+    };
+
+    /* Snipe mode - slower mouse */
+    snipe_mode {
         layers = <SNIPE SNIPETOP>;
-        input-processors = <&xy_boost_scaler 3 2>;
+        input-processors = <&y_scaler 3 2>, <&x_scaler 3 2>;
     };
 
-    boost {
-        layers = <BASE DIRECTACC NUMBERS RAISE FUNC WARP SCROLL MOUSETOP SCROLLTOP>;
-        input-processors = <&xy_boost_scaler 3 1>;
-    };
-
-    boost_top {
-        layers = <BASE DIRECTACC NUMBERS RAISE FUNC WARP SCROLL MOUSETOP SCROLLTOP>;
-        input-processors = <&xy_boost_scaler 3 1>;
+    /* Default mouse movement */
+    default_move {
+        layers = <BASE LOWER RAISE DIRECTACC FUNC ADJ NUMBERS WARP SYSTEM>;
+        input-processors = <&y_scaler 3 1>, <&x_scaler 3 1>;
     };
 
   };

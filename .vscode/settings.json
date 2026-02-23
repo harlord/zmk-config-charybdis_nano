@@ -1,3 +1,4 @@
 {
-    "zephyr-tools.paths.zephyrBase": "/Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano/zephyr"
+    "zephyr-tools.paths.zephyrBase": "/Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano/zephyr",
+    "cmake.sourceDirectory": "/Users/haroldhernandez/Charybdis/zmk-config-charybdis_nano/zephyr"
 }
