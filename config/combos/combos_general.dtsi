@@ -350,14 +350,14 @@
             layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
         };
 
-        combo_mouse_lh_r: combo_mouse_lh_r {
-            bindings = <&mcmou RCLK>;   // or your desired behavior
-            key-positions = <10>;     // the key you press
-            timeout-ms = <1000>;       // regular combo timeout
-            require-pointer-move;     // gate on movement
-            pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
-            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
-        };
+        //combo_mouse_lh_r: combo_mouse_lh_r {
+        //    bindings = <&mcmou RCLK>;   // or your desired behavior
+        //    key-positions = <10>;     // the key you press
+        //    timeout-ms = <1000>;       // regular combo timeout
+        //    require-pointer-move;     // gate on movement
+        //    pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
+        //    layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+        //};
 
 
 //shift+BKSPACE<>TILDE 

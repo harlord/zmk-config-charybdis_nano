@@ -131,10 +131,10 @@ west build -p \
 
     keymap {
         compatible = "zmk,keymap";
- base_layer {
+        base_layer {
             bindings = <
                                &kp Q                  &kp W               &kp F                &kp P              &kp B                             &kp J    &kp L             &kp U                  &kp Y                &kp SQT
-                               &kp A                  &kp R               &kp S      &kp T              &kp G                             &kp M    &kp N             &kp E                  &kp I                &kp O
+                               &kp A                  &kp R               &kp S                &kp T              &kp G                             &kp M    &kp N             &kp E                  &kp I                &kp O
                                &hml_hr LSHFT Z        &hml_hr LCTRL X     &hml_hr LALT C       &hml_hr LGUI D     &kp V                             &kp K    &hmr_hr LGUI H    &hmr_hr LALT COMMA     &hmr_hr LCTRL DOT    &hmr_hr LSHFT SLASH        
  &base_th_mo_kp_hp FUNC DEL  &lm_homerow_short LSHFT BACKSPACE  &base_th_mo_kp_hp SNIPETOP TAB                 &base_th_mo_kp_hp RAISE ENTER  &spacelm LOWER SPACE  
             >;
@@ -197,7 +197,7 @@ west build -p \
         lower_layer {
             bindings = <
                   &kp N1                         &kp N2                        &kp N3                        &kp N4              &kp N5                                    &kp N6             &kp N7                    &kp N8                   &kp N9                 &kp N0
-                  &kp A                          &ref_imp                      &kp LC(LS(MINUS))             &kp LC(MINUS)       &kp UNDER                                 &kp PLUS           &kp COLON                 &kp LT                   &kp GT                 &kp QUESTION
+                  &kp PIPE                       &kp LBRC                      &kp RBRC                      &kp TILDE           &kp UNDER                                 &kp PLUS           &kp COLON                 &kp LT                   &kp GT                 &kp QUESTION
                   &lrlMo LSHFT BSLH              &lrlMo LCTRL LBKT             &lrlMo LALT RBKT              &lrlMo LGUI GRAVE   &kp MINUS                                 &kp EQUAL          &lrrMo LGUI SEMI          &lrrMo RALT COMMA        &lrrMo RCTRL DOT       &lrrMo RSHFT SLASH 
   &th_mo_kp_hp FUNC DEL  &th_kp_kp_hp LSHFT BACKSPACE  &th_mo_kp_hp SNIPETOP TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
