@@ -56,7 +56,14 @@ west build -p \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
   -DSHIELD=charybdis_left
 
-
+//ONLY RIGHT
+west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -S zmk-usb-logging \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
+  -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
 
 west build -p \
   -s zmk/app -b nice_nano -d build/right \
@@ -270,4 +277,3 @@ west build -p \
     };
 
 };
-

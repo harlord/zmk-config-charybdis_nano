@@ -373,4 +373,8 @@ CBKS(&mc_bkctilde A, 10)                  CBKDALEFT(&td_find_g_ht LG(F) LG(LS(F)
 //CENTDLEFT(&kp LC(C_BRI_DN), 0)          CENTDLEFT(&kp LC(C_BRI_UP), 1)                CENTDLEFT(&kp C_BRI_DN, 2)                      CENTDLEFT(&kp C_BRI_UP, 3)                                                 CENTDLEFT(&kp C_VOL_UP, 5)    CENT(&kp C_PREV, 6)   CENT(&kp C_PP, 7)     CENT(&kp C_NEXT, 8)     
 //                                        CENTDLEFT(&kp LC(UP), 11)                     CENTDLEFT(&kp LC(DOWN), 12)                     CENTDLEFT(&kp F11, 13)              CENTDLEFT(&kp LC(LS(LEFT)), 14)        CENTDLEFT(&kp C_VOL_DN, 15)   CENT(&bt_0, 16)       CENT(&bt_1, 17)       CENT(&bt_2, 18)          CENT(&bt_3, 19)
 //                                                                                                                                                                                                                 CENTDLEFT(&kp C_MUTE, 25)                                                                                                                                                                                                           CENTDLEFT(&kp C_MUTE, 25)
+<<<<<<< HEAD
     };
+=======
+    };
+>>>>>>> mouse-rgb

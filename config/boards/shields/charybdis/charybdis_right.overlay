@@ -73,6 +73,7 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
+<<<<<<< HEAD
         motion-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         /* Swap axes for 90° rotation, adjust inverts as needed */
         zephyr,axis-x = <INPUT_REL_X>;
@@ -80,6 +81,12 @@
         res-cpi = <200>;  /* Lower CPI = less sensitive to tiny vibrations */
         invert-x;
         invert-y;
+=======
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        //automouse-layer = <MOUSE>;
+        //scroll-layers = <SCROLL SCROLLTOP FAST>;
+        //snipe-layers = <SNIPE SNIPETOP>;
+>>>>>>> mouse-rgb
     };
 };
 
@@ -106,6 +113,7 @@
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
+
 
 / {
   chosen {

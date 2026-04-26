@@ -3,5 +3,66 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+<<<<<<< HEAD
 // Keyboard mouse emulation behaviors (not used - trackball handles pointing)
 // Keep this file for pointing.h include and de
+=======
+
+// Based on @caksoylar's config, defaults in comments
+&mmv {
+  acceleration-exponent = <2>;          // 1
+  time-to-max-speed-ms = <100>;         // 300
+  delay-ms = <80>;                       // 0
+};
+
+&msc {
+  acceleration-exponent = <1>;          // 0
+  time-to-max-speed-ms = <100>;         // 300
+  delay-ms = <80>;                       // 0
+};
+
+&mmv_input_listener {
+  warp {
+    layers = <WARP>;
+    input-processors = <&zip_xy_scaler 3 1>;
+  };
+  precision {
+    layers = <SNIPE SNIPETOP>;
+    input-processors = <&zip_xy_scaler 1 4>;
+  };
+};
+
+/ {
+  zip_scroll_scaler: zip_scroll_scaler {
+    compatible = "zmk,input-processor-scaler";
+    #input-processor-cells = <2>;
+    type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+    track-remainders;
+  };
+};
+
+&msc_input_listener {
+    warp {
+        layers = <WARP>;
+        input-processors = <&zip_scroll_scaler 4 1>;
+    };
+    precision {
+        layers = <SNIPE SNIPETOP>;
+        input-processors = <&zip_scroll_scaler 1 2>;
+    };
+    fast {                          
+        layers = <FAST>;
+        input-processors = <&zip_scroll_scaler 25 1>;
+    };
+};
+
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_WH_U &msc SCRL_UP
+#define U_WH_D &msc SCRL_DOWN
+#define U_WH_L &msc SCRL_LEFT
+#define U_WH_R &msc SCRL_RIGHT
+>>>>>>> mouse-rgb
