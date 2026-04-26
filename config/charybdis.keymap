@@ -56,7 +56,8 @@ west build -p \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
   -DSHIELD=charybdis_left
 
-
+source .venv/bin/activate && west build -p -s zmk/app -d build/reset --board nice_nano_v2 --
+   "-DSHIELD=charybdis_left settings_reset" "-DZMK_CONFIG=$(pwd)/config" 2>&1 | tail -10
 
 west build -p \
   -s zmk/app -b nice_nano_v2 -d build/right \
