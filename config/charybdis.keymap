@@ -56,6 +56,17 @@ west build -p \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
   -DSHIELD=charybdis_left
 
+
+
+  1. First boot — plug in USB, open a serial terminal:                                                           
+  ls /dev/tty.usbmodem*                                                                                        
+  screen /dev/tty.usbmodem* 115200                                                                               
+  1. Confirm trackball works, note log output (should see PMW3610 initialized)                                   
+  2. Power cycle — unplug USB, unplug battery, wait 5 seconds, plug battery back in, then plug USB back in       
+  3. Second boot — open serial terminal again (the device name may change), check if PMW3610 initialized appears 
+  or if you see errors/retries 
+
+
 //ONLY RIGHT
 west build -p \
   -s zmk/app -b nice_nano_v2 -d build/right \
@@ -63,6 +74,14 @@ west build -p \
   -- \
   -DZMK_CONFIG="${PWD}/config" \
   -DOVERLAY_CONFIG=${PWD}/config/debug.conf \
+  -DSHIELD=charybdis_right
+
+
+  west build -p \
+  -s zmk/app -b nice_nano_v2 -d build/right \
+  -S zmk-usb-logging \
+  -- \
+  -DZMK_CONFIG="${PWD}/config" \
   -DSHIELD=charybdis_right
 
 west build -p \
