@@ -28,7 +28,7 @@
     key-positions = <KEYPOS>; \
     slow-release; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <BASE DIRECTACC NUMBERS RAISE LOWER FUNC>; \
+    layers = <BASE DIRECTACC NUMBERS FUNC LOWER RAISE>; \
   };
 
 #define COMBOMOUUACT(NAME, BINDINGS, KEYPOS) \
@@ -47,7 +47,7 @@
     key-positions = <KEYPOS>; \
     slow-release; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <BASE DIRECTACC NUMBERS RAISE LOWER FUNC>; \
+    layers = <BASE DIRECTACC NUMBERS FUNC LOWER RAISE>; \
   };
 
 #define RCOMBO(NAME, BINDINGS, KEYPOS) \
@@ -56,7 +56,7 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <BASE DIRECTACC RAISE FUNC>; \
+    layers = <BASE DIRECTACC FUNC LOWER RAISE>; \
   };
 
 #define RCOMBOMOUSE(NAME, BINDINGS, KEYPOS) \
@@ -74,7 +74,7 @@
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>; \
-    layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>; \
+    layers = <BASE DIRECTACC NUMBERS FUNC LOWER RAISE>; \
   };
 
 #define LCOMBOMOUSE(NAME, BINDINGS, KEYPOS) \
@@ -214,16 +214,18 @@
     combos {
         compatible = "zmk,combos";
         //THUMB LEFT HAND
-        COMBOMOUUACT(comb_t_qwfp, &kp ESC, 0 1 2 3)
-        COMBOMOUUACT(comb_t_qwf, &kp DELETE, 0 1 2)
-        COMBOMOUUACT(comb_t_wfp, &kp BACKSPACE, 1 2 3)
-        COMBOMOUUACT(comb_t_pb, &kp TAB, 3 4)
+        COMBOMOUUACT(comb_t_pb, &kp ESC, 3 4)
+        COMBOMOUUACT(comb_t_qwf, &kp CAPS, 0 1 2)
+        COMBOMOUUACT(comb_t_wfp, &kp DELETE, 1 2 3)
+        COMBOMOUUACT(comb_t_pg, &kp BACKSPACE, 3 14)
+        COMBOMOUUACT(comb_t_dv, &kp TAB, 23 24)
 
         //LEFT HAND
-        LCOMBOACT(comb_qwfp, &kp ESC, 0 1 2 3)
-        LCOMBOACT(comb_qwf, &kp DELETE, 0 1 2)
-        LCOMBOACT(comb_wfp, &kp BACKSPACE, 1 2 3)
-        LCOMBOACT(comb_pb, &kp TAB, 3 4)
+        LCOMBOACT(comb_pb, &kp ESC, 3 4)
+        LCOMBOACT(comb_qwf, &kp CAPS, 0 1 2)
+        LCOMBOACT(comb_wfp, &kp DELETE, 1 2 3)
+        LCOMBOACT(comb_pg, &kp BACKSPACE, 3 14)
+        LCOMBOACT(comb_dv, &kp TAB, 23 24)
 
         LCOMBO(comb_gv, &kp MINUS, 14 24)// G V
         LCOMBO(comb_td, &kp GRAVE, 13 23)// T D 
@@ -232,16 +234,17 @@
         LCOMBO(comb_az, &kp BSLH, 10 20)// A Z
 
         //THUMB RIGHT HAND (commented because the mouse + navigation changes)
-        //COMBOMOUUACT(comb_t_luysqt, &kp ESC, 6 7 8 9)
-        //COMBOMOUUACT(comb_t_uysqt, &kp CAPS, 7 8 9)
-        //COMBOMOUUACT(comb_t_luy, &kp SPACE, 6 7 8)
-        COMBOMOUUACT(comb_t_jl, &kp ENTER, 5 6)
+        COMBOMOUUACT(comb_t_jl, &kp ESC, 5 6)
+        //COMBOMOUUACT(comb_t_uysqt, &caps_word, 7 8 9)
+        COMBOMOUUACT(comb_t_lm, &kp SPACE, 6 15)
+        COMBOMOUUACT(comb_t_kh, &kp ENTER, 25 26)
 
         //RIGHT HAND
-        RCOMBOACT(comb_luysqt, &kp ESC, 6 7 8 9)
-        RCOMBOACT(comb_uysqt, &kp CAPS, 7 8 9)
-        RCOMBOACT(comb_luy, &kp SPACE, 6 7 8)
-        RCOMBOACT(comb_jl, &kp ENTER, 5 6)
+        RCOMBOACT(comb_jl, &kp ESC,  5 6)
+        RCOMBOACT(comb_luy, &kp GLOBE, 6 7 8)
+        RCOMBOACT(comb_uysqt, &caps_word, 7 8 9)
+        RCOMBOACT(comb_lm, &kp SPACE, 6 15)
+        RCOMBOACT(comb_kh, &kp ENTER, 25 26)
 
         RCOMBOMOUSE(requal_mou, &kp EQUAL, 15 25)
         RCOMBO(requal, &kp EQUAL, 15 25)
@@ -274,6 +277,7 @@
             key-positions = <31 32>;     // the key you press
             timeout-ms = <300>;       // regular combo timeout
             slow-release;
+            layers = <BASE>;
         };
 
         combo_system_thumb_r: combo_system_thumb_r {
@@ -281,15 +285,19 @@
             key-positions = <33 34>;     // the key you press
             timeout-ms = <300>;       // regular combo timeout
             slow-release;
+            layers = <BASE>;
         };
 
+//When SNIPETOP/tab thump is pressed, this should to wait the timer to activate the layer
+//so if the pointer is moving, the slow pointer is not notice until the layer is activated.
+//This combo force a inmediate activation if thumb is presed and pointer move is detected 
          combo_mouse_thumb: combo_mouse_thumb {
             bindings = <&mo SNIPETOP>;   // or your desired behavior
             key-positions = <32>;     // the key you press
             timeout-ms = <1000>;       // regular combo timeout
             require-pointer-move;     // gate on movement
             pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms
-            layers = <BASE DIRECTACC RAISE NUMBERS LOWER FUNC>;          // where it applies
+            layers = <BASE>;          // where it applies
         };
 
         //EDIT POINTER
@@ -362,8 +370,8 @@
 
 //shift+BKSPACE<>TILDE 
 CBKSHIFT(&mshon LA(N1), 0)                CBKLLEFT(&mo DIRECTACC, 1)                    CBKLLEFT(&mo FUNC, 2)                        CBKLLEFT(&mo NUMBERS, 3)  CBKLLEFT(&mo SYSTEM, 4)                                                                 CBKS(&mc_bkctilde U, 7) 
-CBKS(&mc_bkctilde A, 10)                  CBKDALEFT(&td_find_g_ht LG(F) LG(LS(F)), 11)  CBKDALEFT(&lrlMo LA(LS(H)) LA(LS(F12)), 12)  CBKS(&caps_word, 13)      CBKDALEFT(&kp CAPS, 14)                   CBKS(&caps_word, 15)  CBKS(&mc_ennesd N, 16)  CBKS(&mc_bkctilde E, 17)  CBKS(&mc_bkctilde I, 18)  CBKS(&mc_bkctilde O, 19)
-                                                                                                                                                                                                                                                                                                            CBKS(&mc_quesd, 29)
+CBKS(&mc_bkctilde A, 10)                                                                                                                                                                                       CBKS(&caps_word, 15)  CBKS(&mc_ennesd N, 16)  CBKS(&mc_bkctilde E, 17)  CBKS(&mc_bkctilde I, 18)  CBKS(&mc_bkctilde O, 19)
+                                                                                                                                                                                                                                                                                                                 CBKS(&mc_quesd, 29)
 //commented to avoid ALT conflict
 
 //cmd+TAB<>DRAGTHUMB(inverted LOWER and DIRECTACC in low row only when DRAGTHUMB not activated)    
