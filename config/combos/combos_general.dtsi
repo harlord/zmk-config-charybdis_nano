@@ -144,7 +144,8 @@
     slow-release; \
     layers = <BASE DIRECTACC RAISE FUNC>; \
   };
-
+  
+/*
 #define CTABD(BINDINGS, KEYPOS) \
   ctabd_##KEYPOS { \
     timeout-ms = <2000>; \
@@ -166,6 +167,7 @@
     slow-release; \
     layers = <BASE DIRECTACC NUMBERS RAISE FUNC  SNIPE SNIPETOP WARP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
+*/
 
 #define CENT(BINDINGS, KEYPOS) \
   cent_##KEYPOS { \
@@ -293,7 +295,7 @@
 //This combo force a inmediate activation if thumb is presed and pointer move is detected 
          combo_mouse_thumb: combo_mouse_thumb {
             bindings = <&mo SNIPETOP>;   // or your desired behavior
-            key-positions = <32>;     // the key you press
+            key-positions = <31>;     // the key you press
             timeout-ms = <1000>;       // regular combo timeout
             require-pointer-move;     // gate on movement
             pointer-move-timeout-ms = <500>; // optional; else uses timeout-ms

@@ -104,25 +104,23 @@
         hml_shift: hml_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "hold-preferred-balanced";
             tapping-term-ms = <250>;                                 
             quick-tap-ms = <175>;
             require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
-            hold-trigger-on-release;
         };
 
         hmr_shift: hmr_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "hold-preferred-balanced";
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
-            hold-trigger-on-release;
         };
 
         lm_homerow_short: lm_homerow_short {
