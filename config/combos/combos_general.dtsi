@@ -112,6 +112,26 @@
     layers = <BASE DIRECTACC RAISE FUNC>; \
   };
 
+#define SHIFTLEFT(BINDINGS, KEYPOS) \
+  shiftleft_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 20>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <20>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
+#define SHIFTRIGHT(BINDINGS, KEYPOS) \
+  shiftright_##KEYPOS { \
+    timeout-ms = <2000>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS 29>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <29>; \
+    layers = <BASE DIRECTACC RAISE FUNC>; \
+  };
+
 #define CBKSHIFT(BINDINGS, KEYPOS) \
   cbkshift_##KEYPOS { \
     timeout-ms = <2000>; \
@@ -289,6 +309,15 @@
             slow-release;
             layers = <BASE>;
         };
+/*
+        combo_raise: combo_raise {
+            bindings = <&mo RAISE>;   // or your desired behavior
+            key-positions = <31 34>;     // the key you press
+            timeout-ms = <300>;       // regular combo timeout
+            slow-release;
+            layers = <BASE>;
+        };
+*/
 
 //When SNIPETOP/tab thump is pressed, this should to wait the timer to activate the layer
 //so if the pointer is moving, the slow pointer is not notice until the layer is activated.
@@ -374,6 +403,29 @@
 CBKSHIFT(&mshon LA(N1), 0)                CBKLLEFT(&mo DIRECTACC, 1)                    CBKLLEFT(&mo FUNC, 2)                        CBKLLEFT(&mo NUMBERS, 3)  CBKLLEFT(&mo SYSTEM, 4)                                                                 CBKS(&mc_bkctilde U, 7) 
 CBKS(&mc_bkctilde A, 10)                                                                                                                                                                                       CBKS(&caps_word, 15)  CBKS(&mc_ennesd N, 16)  CBKS(&mc_bkctilde E, 17)  CBKS(&mc_bkctilde I, 18)  CBKS(&mc_bkctilde O, 19)
                                                                                                                                                                                                                                                                                                                  CBKS(&mc_quesd, 29)
+
+
+
+
+
+
+                                                                                                                                                                                                                                                   SHIFTLEFT(&mc_bkctilde U, 7) 
+SHIFTLEFT(&mc_bkctilde A, 10)                                                                                                                                                                                         SHIFTLEFT(&mc_ennesd N, 16)  SHIFTLEFT(&mc_bkctilde E, 17)  SHIFTLEFT(&mc_bkctilde I, 18)  SHIFTLEFT(&mc_bkctilde O, 19)
+                                                                                                                                                                                                                                                                                                                 //SHIFTLEFT(&mc_quesd, 29)
+
+
+
+
+                                                                                                                                                                                                                                                    SHIFTRIGHT(&mc_bkctilde U, 7) 
+SHIFTRIGHT(&mc_bkctilde A, 10)                                                                                                                                                                                        SHIFTRIGHT(&mc_ennesd N, 16)  SHIFTRIGHT(&mc_bkctilde E, 17)  SHIFTRIGHT(&mc_bkctilde I, 18)  SHIFTRIGHT(&mc_bkctilde O, 19)
+                                                                                                                                                                                                                                                                                                                    //SHIFTRIGHT(&mc_quesd, 29)
+
+
+
+
+
+
+
 //commented to avoid ALT conflict
 
 //cmd+TAB<>DRAGTHUMB(inverted LOWER and DIRECTACC in low row only when DRAGTHUMB not activated)    

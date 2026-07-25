@@ -250,7 +250,7 @@
 
         space: space {
             compatible = "zmk,behavior-hold-tap";
-            flavor = SPACE_HOLDING_TYPE;
+            flavor = "hold-preferred";
             tapping-term-ms = <THUMB_HOLDING_TIME>;
             //quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
             #binding-cells = <2>;
