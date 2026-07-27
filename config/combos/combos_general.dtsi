@@ -309,15 +309,6 @@
             slow-release;
             layers = <BASE>;
         };
-/*
-        combo_raise: combo_raise {
-            bindings = <&mo RAISE>;   // or your desired behavior
-            key-positions = <31 34>;     // the key you press
-            timeout-ms = <300>;       // regular combo timeout
-            slow-release;
-            layers = <BASE>;
-        };
-*/
 
 //When SNIPETOP/tab thump is pressed, this should to wait the timer to activate the layer
 //so if the pointer is moving, the slow pointer is not notice until the layer is activated.

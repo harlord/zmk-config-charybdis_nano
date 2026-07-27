@@ -124,6 +124,15 @@ west build -p \
 //20  21 22 23 24 25    26 27 28 29 30  31
 //        32 33 34         35 36 37
 
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer_raise {
+            if-layers = <SNIPETOP LOWER>;
+            then-layer = <RAISE>;
+        };
+    };
+};
 
 &lt {
     tapping-term-ms = <240>;
@@ -171,7 +180,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &mkp RCLK                             &kp M           &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C       &hml_hr LGUI D        &kp V                                 &kp K           &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -181,7 +190,7 @@ west build -p \
 &kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP          &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &hml_hr LSHFT RG(Z)        &hml_hr LCTRL RG(X)         &hml_hr LALT RG(C)    &hml_hr LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo LGUI RG(H)          &lrrMo LALT RG(COMMA)          &lrrMo LCTRL RG(DOT)            &lrrMo LSHFT RG(SLASH) 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -191,7 +200,7 @@ west build -p \
 &kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP          &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &hml_hr LSHFT RG(Z)        &hml_hr LCTRL RG(X)         &hml_hr LALT RG(C)    &hml_hr LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo LGUI RG(H)          &lrrMo LALT RG(COMMA)          &lrrMo LCTRL RG(DOT)            &lrrMo LSHFT RG(SLASH) 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -201,7 +210,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLLTOP            &mo SNIPE             &mkp LCLK             &mkp RCLK                               &kp M           &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C        &hml_hr LGUI D        &kp K_PASTE                             &kp K           &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
- &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                        &th_mo_kp_hp RAISE ENTER   &space RAISE SPACE   
+ &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                        &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -211,7 +220,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &mkp RCLK                             &kp M               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &hml_hr LSHFT Z            &hml_hr LCTRL X          &hml_hr LALT C       &hml_hr LGUI D        &kp V                                 &kp K               &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
- &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space RAISE SPACE   
+ &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -240,7 +249,7 @@ west build -p \
                   &kp PIPE                       &kp LBRC                      &kp RBRC                      &kp TILDE           &kp UNDER                                 &kp PLUS           &kp COLON                 &kp LT                   &kp GT                 &kp QUESTION
                   &lrlMo LSHFT BSLH              &lrlMo LCTRL LBKT             &lrlMo LALT RBKT              &lrlMo LGUI GRAVE   &kp MINUS                                 &kp EQUAL          &lrrMo LGUI SEMI          &lrrMo RALT COMMA        &lrrMo RCTRL DOT       &lrrMo RSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp RAISE BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_mo_kp_hp RAISE TAB                  &th_mo_kp_hp RAISE ENTER   &space LOWER SPACE   
             >;
         };
 
