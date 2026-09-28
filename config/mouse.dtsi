@@ -20,10 +20,6 @@
 };
 
 &mmv_input_listener {
-  warp {
-    layers = <WARP>;
-    input-processors = <&zip_xy_scaler 3 1>;
-  };
   precision {
     layers = <SNIPE SNIPETOP>;
     input-processors = <&zip_xy_scaler 1 4>;
@@ -41,10 +37,6 @@
 };
 
 &msc_input_listener {
-    warp {
-        layers = <WARP>;
-        input-processors = <&zip_scroll_scaler 4 1>;
-    };
     precision {
         layers = <SNIPE SNIPETOP>;
         input-processors = <&zip_scroll_scaler 1 2>;

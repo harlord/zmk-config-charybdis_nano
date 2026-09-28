@@ -83,7 +83,7 @@
             flavor = "balanced";
             tapping-term-ms = <250>;                                 
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <175>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -95,7 +95,7 @@
             flavor = "balanced";
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <175>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
             hold-trigger-on-release;
@@ -105,9 +105,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred-balanced";
-            tapping-term-ms = <250>;                                 
+            tapping-term-ms = <250>;                                
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
         };
@@ -118,7 +117,6 @@
             flavor = "hold-preferred-balanced";
             tapping-term-ms = <250>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <50>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
         };
@@ -237,6 +235,17 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
         };
+
+        base_th_kp_kp_hp: base_th_kp_kp_hp {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            //quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            #binding-cells = <2>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
 
         th_kp_kp_hp: th_kp_kp_hp {
             compatible = "zmk,behavior-hold-tap";

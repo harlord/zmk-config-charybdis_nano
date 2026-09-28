@@ -8,9 +8,7 @@
 #define NAVIGATION 7
 #define LOWER 8
 #define RAISE 9
-#define DIRECTACC 10
-#define FUNC 11
-#define ADJ  12
-#define NUMBERS 13
-#define WARP 14
-#define SYSTEM 15
+#define FUNC 10
+#define ADJ  11
+#define NUMBERS 12
+#define SYSTEM 13

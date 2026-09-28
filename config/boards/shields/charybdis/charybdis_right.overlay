@@ -188,7 +188,7 @@
 
     /* Default mouse movement */
     default_move {
-        layers = <BASE LOWER RAISE DIRECTACC FUNC ADJ NUMBERS WARP SYSTEM>;
+        layers = <BASE LOWER RAISE FUNC ADJ NUMBERS SYSTEM>;
         input-processors = <&y_scaler 3 1>, <&x_scaler 3 1>;
     };
 
