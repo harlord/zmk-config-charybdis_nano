@@ -184,7 +184,7 @@ west build -p \
             bindings = <
 &kp Q                      &kp W                    &kp F                &kp P                 &kp B                                 &kp J           &mcnavkp HOME              &mcnavkp UP                    &mcnavkp END                    &mcnavkp PG_UP
 &mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &mkp RCLK                             &kp M           &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
-&lrlMo LSHFT Z            &lrlMo LCTRL X          &lrlMo LALT C       &lrlMo LGUI D        &kp V                                 &kp K           &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
+&lrlMo LSHFT Z             &lrlMo LCTRL X           &lrlMo LALT C        &lrlMo LGUI D         &kp V                                 &kp K           &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
   &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                  &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
             >;
@@ -234,7 +234,7 @@ west build -p \
         bindings = <
 &kp Q                      &kp W                    &kp F                  &kp P                  &kp B                                 &kp J               &mcnavkp HOME              &mcnavkp UP                    &mcnavkp END                    &mcnavkp PG_UP
 &mkp RCLK                  &mo SCROLL               &mo SNIPE              &mkp LCLK              &mkp RCLK                             &kp M               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
-&lrlMo LSHFT Z            &lrlMo LCTRL X          &lrlMo LALT C         &lrlMo LGUI D         &kp V                                 &kp K               &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
+&lrlMo LSHFT Z             &lrlMo LCTRL X           &lrlMo LALT C          &lrlMo LGUI D          &kp V                                 &kp K               &lrrMo LGUI H              &lrrMo LALT COMMA              &lrrMo LCTRL DOT                &lrrMo LSHFT SLASH 
  &base_th_mo_kp_hp LALT DEL  &base_th_mo_kp_hp SNIPETOP BACKSPACE  &base_th_kp_kp_hp LSHFT TAB                    &base_th_kp_kp_hp LALT ENTER  &space LOWER SPACE  
         >;
     };
