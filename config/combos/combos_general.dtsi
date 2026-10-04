@@ -49,6 +49,17 @@
     layers = <SNIPE SNIPETOP SCROLL FAST MOUSETOP SCROLLTOP>; \
   };
 
+#define COMBOMOUUACTALTTUMB(SLOWBINDING, QUICKBINDINGS, LEADERPOS, KEYPOS) \
+  COMBOMOUUACTALTTUMB_##KEYPOS##LEADERPOS { \
+    timeout-ms = <2000>; \
+    bindings = <SLOWBINDING>, <QUICKBINDINGS>; \
+    slow-release; \
+    key-positions = <KEYPOS LEADERPOS>; \
+    key-positions-leader = <KEYPOS>; \
+    key-positions-first-exclude = <LEADERPOS>; \
+    layers = <BASE>; \
+  };
+
 #define RCOMBOACT(NAME, BINDINGS, KEYPOS) \
   RCOMBOACT_##NAME { \
     timeout-ms = <2000>; \
@@ -332,7 +343,9 @@
 CBKSHIFT(&mshon LA(N1), 0)                                                                                                                                                                                                                                   CBKS(&mc_bkctilde U, 7) 
 CBKS(&mc_bkctilde A, 10)                                                                                                                                                                                                             CBKS(&mc_ennesd N, 16)  CBKS(&mc_bkctilde E, 17)  CBKS(&mc_bkctilde I, 18)  CBKS(&mc_bkctilde O, 19)
                                                                                                                                                                                                                                                                                                                  CBKS(&mc_quesd, 29)
-
+COMBOMOUUACTALTTUMB(&kp LALT, &kp BACKSPACE, 31, 22) 
+COMBOMOUUACTALTTUMB(&kp LGUI, &kp BACKSPACE, 31, 23)
+COMBOMOUUACTALTTUMB(&kp LGUI, &kp SPACE, 34, 23)
 
 //this is for enure to get the "?"
 SHIFTLEFT(&kp LS(SLASH), 20) 
