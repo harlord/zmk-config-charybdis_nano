@@ -345,7 +345,8 @@ CBKS(&mc_bkctilde A, 10)                                                        
                                                                                                                                                                                                                                                                                                                  CBKS(&mc_quesd, 29)
 COMBOMOUUACTALTTUMB(&kp LALT, &kp BACKSPACE, 31, 22) 
 COMBOMOUUACTALTTUMB(&kp LGUI, &kp BACKSPACE, 31, 23)
-COMBOMOUUACTALTTUMB(&kp LGUI, &kp SPACE, 34, 23)
+//DON'T USE COMBOS WITH SPACE TO AVOID ACCIDENTAL ACTIVATIONS!!
+//COMBOMOUUACTALTTUMB(&kp LGUI, &kp SPACE, 34, 23)
 
 //this is for enure to get the "?"
 SHIFTLEFT(&kp LS(SLASH), 20) 

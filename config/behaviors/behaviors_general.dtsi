@@ -121,6 +121,15 @@
             hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS RIGHT_THUMB_KEYS>;
         };
 
+        hm_cb_shift: hm_cb_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+        };
+
         lrlMo: lrlMo {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
