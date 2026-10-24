@@ -60,6 +60,16 @@
     layers = <BASE>; \
   };
 
+#define COMBOMOUUACTALTTUMB2(SLOWBINDING, QUICKBINDINGS, LEADERPOS, KEYPOS, KEYPOS2) \
+  COMBOMOUUACTALTTUMB2_##KEYPOS##LEADERPOS##KEYPOS2 { \
+    timeout-ms = <2000>; \
+    bindings = <SLOWBINDING>, <QUICKBINDINGS>; \
+    slow-release; \
+    key-positions = <KEYPOS LEADERPOS KEYPOS2>; \
+    key-positions-first-exclude = <LEADERPOS>; \
+    layers = <BASE>; \
+  };
+
 #define RCOMBOACT(NAME, BINDINGS, KEYPOS) \
   RCOMBOACT_##NAME { \
     timeout-ms = <2000>; \
@@ -251,7 +261,7 @@
 
         //THUMB
         combo_system_thumb_l: combo_system_thumb_l {
-            bindings = <&kp GRAVE>;   // or your desired behavior
+            bindings = <&mo NUMBERS>;   // or your desired behavior
             key-positions = <31 32>;     // the key you press
             timeout-ms = <300>;       // regular combo timeout
             slow-release;
@@ -308,6 +318,13 @@
             layers = <SNIPE SNIPETOP SCROLL FAST MOUSETOP SCROLLTOP>;          // where it applies
         };
 
+        combo_t_capsword: combo_t_capsword {
+            bindings = <&caps_word>;   // or your desired behavior
+            key-positions = <12 13 16 17>;     // the key you press
+            timeout-ms = <1000>;       // regular combo timeout
+            layers = <BASE>;          // where it applies
+        };
+
         // combo_t_save: combo_t_save {
         //     bindings = <&kp RG(S)>;
         //     key-positions = <12>;
@@ -345,6 +362,8 @@ CBKS(&mc_bkctilde A, 10)                                                        
                                                                                                                                                                                                                                                                                                                  CBKS(&mc_quesd, 29)
 COMBOMOUUACTALTTUMB(&kp LALT, &kp BACKSPACE, 31, 22) 
 COMBOMOUUACTALTTUMB(&kp LGUI, &kp BACKSPACE, 31, 23)
+COMBOMOUUACTALTTUMB(&kp LCTRL, &kp TAB, 32, 28)
+COMBOMOUUACTALTTUMB2(&mc_two_kp LCTRL LSHFT, &kp TAB, 32, 28, 29)
 //DON'T USE COMBOS WITH SPACE TO AVOID ACCIDENTAL ACTIVATIONS!!
 //COMBOMOUUACTALTTUMB(&kp LGUI, &kp SPACE, 34, 23)
 

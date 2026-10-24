@@ -165,7 +165,7 @@ west build -p \
                                &kp Q                &kp W               &kp F                      &kp P                     &kp B                     &kp J    &kp L                     &kp U                      &kp Y                &kp SQT
                                &kp A                &kp R               &hm_cb_shift LSHFT S       &hm_cb_shift LSHFT T      &kp G                     &kp M    &hm_cb_shift LSHFT N      &hm_cb_shift LSHFT E       &kp I                &kp O
                                &hml_hr LSHFT Z      &hml_hr LCTRL X     &hml_hr LALT C             &hml_hr LGUI D            &kp V                     &kp K    &hmr_hr RGUI H            &hmr_hr RALT COMMA         &hmr_hr RCTRL DOT    &hmr_hr RSHFT SLASH        
- &base_th_mo_kp_hp FUNC DEL  &base_th_mo_kp_hp SNIPETOP BACKSPACE  &base_th_kp_kp_hp LSHFT TAB                 &base_th_kp_kp_hp LALT ENTER  &spacelm LOWER SPACE  
+ &base_th_mo_kp_hp FUNC DEL  &base_th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                 &kp ENTER  &spacelm LOWER SPACE  
             >;
         };
 
@@ -175,7 +175,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &mkp RCLK                             &kp M           &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &lrlMo LSHFT Z             &lrlMo LCTRL X           &lrlMo LALT C        &lrlMo LGUI D         &kp V                                 &kp K           &lrrMo RGUI H              &lrrMo RALT COMMA              &lrrMo RCTRL DOT                &lrrMo RSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                  &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                  &kp ENTER   &space RAISE SPACE   
             >;
         };
 
@@ -185,7 +185,7 @@ west build -p \
 &kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP          &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &lrlMo LSHFT RG(Z)        &lrlMo LCTRL RG(X)         &lrlMo LALT RG(C)    &lrlMo LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo RGUI RG(H)          &lrrMo RALT RG(COMMA)          &lrrMo RCTRL RG(DOT)            &lrrMo RSHFT RG(SLASH) 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space RAISE SPACE   
             >;
         };
 
@@ -195,7 +195,7 @@ west build -p \
 &kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP          &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &lrlMo LSHFT RG(Z)        &lrlMo LCTRL RG(X)         &lrlMo LALT RG(C)    &lrlMo LGUI RG(D)    &kp RG(V)                             &ref_imp                    &lrrMo RGUI RG(H)          &lrrMo RALT RG(COMMA)          &lrrMo RCTRL RG(DOT)            &lrrMo RSHFT RG(SLASH) 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space RAISE SPACE   
             >;
         };
 
@@ -205,7 +205,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLLTOP            &mo SNIPE             &mkp LCLK             &mkp RCLK                               &kp M           &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &lrlMo LSHFT Z            &lrlMo LCTRL X          &lrlMo LALT C        &lrlMo LGUI D        &kp K_PASTE                             &kp K           &lrrMo RGUI H              &lrrMo RALT COMMA              &lrrMo RCTRL DOT                &lrrMo RSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
- &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                         &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
+ &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                         &kp ENTER   &space RAISE SPACE   
             >;
         };
 
@@ -215,7 +215,7 @@ west build -p \
 &mkp RCLK                  &mo SCROLL               &mo FAST             &mkp LCLK             &mkp RCLK                             &kp M               &mcnavkp LEFT              &mcnavkp DOWN                  &mcnavkp RIGHT                  &mcnavkp PG_DN
 &lrlMo LSHFT Z            &lrlMo LCTRL X          &lrlMo LALT C       &lrlMo LGUI D        &kp V                                 &kp K               &lrrMo RGUI H              &lrrMo RALT COMMA              &lrrMo RCTRL DOT                &lrrMo RSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
- &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space RAISE SPACE   
+ &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space RAISE SPACE   
             >;
         };
 
@@ -234,7 +234,7 @@ west build -p \
 &kp RG(A)                  &mo SCROLLTOP               &mo MOUSETOP          &mkp LCLK             &mkp RCLK                             &kp LC(MINUS)               &kp LEFT                   &kp DOWN                       &kp RIGHT                       &kp PG_DN
 &kp LSHFT                  &kp LCTRL                   &kp LALT              &kp LGUI              &kp RG(V)                             &ref_imp                    &kp LGUI                   &kp RALT                       &kp RCTRL                       &kp RSHFT  
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -244,7 +244,7 @@ west build -p \
                   &kp PIPE                       &kp LBRC                      &kp RBRC                      &kp TILDE           &kp UNDER                                 &kp PLUS           &kp COLON                 &kp LT                   &kp GT                 &kp QUESTION
                   &lrlMo LSHFT BSLH              &lrlMo LCTRL LBKT             &lrlMo LALT RBKT              &lrlMo LGUI GRAVE   &kp MINUS                                 &kp EQUAL          &lrrMo RGUI SEMI          &lrrMo RALT COMMA        &lrrMo RCTRL DOT       &lrrMo RSHFT SLASH 
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp RAISE BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE   
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp RAISE BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE   
             >;
         };
 
@@ -254,7 +254,7 @@ west build -p \
                   &kp PIPE                   &kp LBRC                    &kp RBRC                         &kp TILDE                         &kp UNDER                             &kp PLUS            &kp COLON                  &kp LT                   &kp GT                     &kp QUESTION
                   &lrlMo LSHFT BSLH          &lrlMo LCTRL LBKT           &lrlMo LALT RBKT                 &lrlMo LGUI GRAVE                 &kp MINUS                             &kp EQUAL           &lrrMo RGUI SEMI           &lrrMo RALT COMMA         &lrrMo RCTRL DOT          &lrrMo RSHFT SLASH              
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
- &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE  
+ &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -264,7 +264,7 @@ west build -p \
         &kp LC(GRAVE)   &kp LC(UP)     &kp LC(LS(LEFT))      &kp LC(DOWN)     &kp F11                             &kp F12            &kp F13             &kp F14           &kp F15           &kp F16 
         &kp LSHFT       &kp LCTRL      &kp LALT              &kp LGUI         &kp F11                             &kp F12            &kp RGUI            &kp RALT          &kp RGUI          &kp RSHFT      
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE  
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -283,7 +283,7 @@ west build -p \
                   &kp PIPE                   &kp LBRC                    &kp RBRC                         &kp TILDE                         &kp COMMA                             &kp PLUS           &kp N4                    &kp N5                   &kp N6           &kp STAR
                   &lrlMo LSHFT BSLH          &lrlMo LCTRL LBKT           &lrlMo LALT RBKT                 &lrlMo LGUI GRAVE                 &kp MINUS                             &kp EQUAL          &kp N1                    &kp N2                   &kp N3           &kp SLASH        
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE  
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE  
             >;
         };
 
@@ -293,7 +293,7 @@ west build -p \
 &bt_0                  &bt_1                      &bt_2                         &bt_3              &out OUT_USB                      &kp C_VOL_DN     &bt_0              &bt_1              &bt_2           &out OUT_USB
 &kp LSHFT              &kp LCTRL                  &kp LALT                      &kp LGUI           &none                             &kp C_MUTE       &kp RGUI           &kp RALT           &kp RCTRL       &kp RSHFT
 //&kp DEL  &kp BACKSPACE  &kp TAB                  &kp ENTER   &kp SPACE   
-  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &th_kp_kp_hp LSHFT TAB                   &th_kp_kp_hp LALT ENTER   &space LOWER SPACE  
+  &th_mo_kp_hp FUNC DEL  &th_mo_kp_hp SNIPETOP BACKSPACE  &kp TAB                   &kp ENTER   &space LOWER SPACE  
             >;
         };
 
